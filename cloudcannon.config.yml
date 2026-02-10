@@ -1,31 +1,34 @@
+# cloudcannon.config.yml
+
+# 1. Where images go
 paths:
-  uploads: uploads
-  static: ''
+  uploads: images
+
+# 2. Tell CloudCannon your HTML files are "Pages" (THIS FIXES YOUR ERROR)
 collections_config:
   pages:
-    path: ''
-    icon: wysiwyg
-    disable_url: false
-    disable_add: false
-    disable_add_folder: false
-    disable_file_actions: false
-timezone: Europe/London
-markdown:
-  engine: commonmark
-  options:
-    xhtml: false
-    breaks: false
-    linkify: false
-    typographer: false
-    spaced_lists: false
-    sentence_per_line: false
-    gfm: false
-    code_block_fences: '```'
-    escape_snippets_in_code_blocks: false
-    treat_indentation_as_code: false
-    table: false
-    strikethrough: false
-    subscript: false
-    superscript: false
-    heading_ids: false
-    attributes: false
+    path: .
+    glob: ["*.html"]
+    url: "/[path]"
+    output: true
+
+# 3. Editor Settings (Date pickers, Image resizers)
+_inputs:
+  date:
+    type: date
+    instance_value: now
+  image:
+    type: image
+    options:
+      width: 800
+      height: 600
+      fit: cover
+
+# 4. Visual Editor "Drag & Drop" Settings
+editor:
+  default_path: /index.html
+  entity_classes:
+    editable:
+      allow_resize: false
+      allow_add: true
+      allow_remove: true
