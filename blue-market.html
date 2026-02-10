@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Blue Market Bermondsey | UMAT</title>
     <meta name="description" content="Free live music and salsa dancing at The Blue Market Bermondsey. Join us for community choirs, brass bands, and dance sessions.">
+    
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    
     <style>
         /* Page Specific Styles */
         .venue-hero {
@@ -20,7 +23,7 @@
             color: white;
             margin-bottom: 40px;
         }
-        /* This converts the background image to a real image so you can click & edit it */
+        /* Editable Hero Image Styling */
         .hero-bg-img {
             position: absolute;
             top: 0;
@@ -104,6 +107,8 @@
         }
         .info-item { margin-bottom: 20px; }
         .info-label { font-weight: bold; display: block; color: #1a1a1a; margin-bottom: 5px; }
+        
+        /* Clickable Links */
         .info-link { color: #555; text-decoration: underline; transition: 0.2s; }
         .info-link:hover { color: var(--red); }
         .info-text { color: #555; margin: 0; }
@@ -159,13 +164,15 @@
 </header>
 
 <div class="venue-hero">
-    <img src="images/letsmakemusidancing.jpeg" class="hero-bg-img editable" alt="Blue Market Dancing">
+    <img src="images/letsmakemusidancing.jpeg" class="hero-bg-img editable" alt="Hero Background">
     <div class="hero-overlay"></div>
     
     <div class="venue-hero-content">
         <span class="venue-tag">Free Entry</span>
-        <h1 class="editable">Let's Make Music & Dance<br>at The Blue Market 2026</h1>
-        <p class="editable" style="font-size: 1.2rem; opacity: 0.9; margin-top:10px;">Live Music Acts & Salsa Dancing Sessions</p>
+        <div class="editable">
+            <h1>Let's Make Music & Dance<br>at The Blue Market 2026</h1>
+            <p style="font-size: 1.2rem; opacity: 0.9; margin-top:10px;">Live Music Acts & Salsa Dancing Sessions</p>
+        </div>
     </div>
 </div>
 
@@ -196,11 +203,12 @@
                         <div class="date-time">1:00pm - 4:00pm</div>
                         <div class="date-mes">Paying tribute to the late and great Mr Russell Dryden</div>
                     </div>
-                    <a href="#" class="btn-red" style="padding: 8px 20px; font-size: 0.8rem; margin:0;">Add to Cal</a>
+                    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=The+Blue+Market+Music+and+Dance&location=The+Blue+Market+Bermondsey+London" target="_blank" class="btn-red" style="padding: 8px 20px; font-size: 0.8rem; margin:0;">Add to Cal</a>
                 </div>
             </div>
 
             <h3 style="margin-top: 60px; margin-bottom: 20px; color: var(--dark); font-size:1.5rem;">Memories from The Blue Market</h3>
+            
             <div class="gallery-grid">
                 <img src="images/letsmakemusic.jpeg" class="gallery-img editable" alt="Live Music Performance">
                 <img src="images/letsmakemusidancing.jpeg" class="gallery-img editable" alt="Dancing at The Blue Market">
@@ -241,7 +249,7 @@
 
                 <a href="https://goo.gl/maps/xyz" target="_blank" class="btn-red" style="width:100%; text-align:center; box-sizing:border-box;">Get Directions</a>
 
-                <iframe class="map-frame" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.0650%2C51.4920%2C-0.0610%2C51.4940&layer=mapnik&marker=51.4930%2C-0.0630" style="border: 1px solid #eee;"></iframe>
+                <iframe class="map-frame" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.0650%2C51.4920%2C-0.0610%2C51.4940&layer=mapnik&marker=51.4930%2C-0.0630"></iframe>
             </div>
         </aside>
 
