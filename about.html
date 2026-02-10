@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About UMAT | Mission & History</title>
-    <meta name="description" content="UMAT is a grassroots community music company in London showcasing aspiring and seasoned musicians since 2018.">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -12,9 +12,7 @@
 
 <header>
     <div class="header-inner">
-        <a href="index.html">
-            <img src="images/UMAT-e1673627924885.png" alt="UMAT Logo" class="logo-img">
-        </a>
+        <a href="index.html"><img src="images/UMAT-e1673627924885.png" alt="UMAT Logo" class="logo-img"></a>
         <button class="mobile-menu-btn" onclick="document.querySelector('.main-nav').classList.toggle('active')">☰</button>
         <nav class="main-nav">
             <a href="index.html" class="nav-link">Home</a>
@@ -28,25 +26,27 @@
 <div class="container" style="margin-top:40px;">
     <div style="text-align:center; margin-bottom:40px;">
         <span style="color:#e60000; font-weight:bold; letter-spacing:1px; text-transform:uppercase;">Est. March 2018</span>
-        <h1 style="color:var(--dark); margin-top:5px;">Our Journey & Achievements</h1>
+        <h1 style="color:var(--dark); margin-top:5px;" data-editable="text">Our Journey & Achievements</h1>
     </div>
 
-    <div class="content-block">
+    <div class="content-block" data-editable="block">
         <h2 style="color:var(--dark); margin-top:0;">Our Mission</h2>
         <p>In March 2018, <strong>UMAT</strong> was established by vocalist <strong>Stephen Pierre</strong> as a grassroots community music company (CIC) based in London.</p>
-        <p>Operating as a not-for-profit group, our primary objective is to showcase and support the talents of both aspiring and seasoned musicians. Prouldy supporting community enrichment and creative music talent. Many of London’s fine student and graduate musicians have taken part in events hosted by UMAT.</p>
-
+        <p>Operating as a not-for-profit group, our primary objective is to showcase and support the talents of both aspiring and seasoned musicians.</p>
+        
         <h4 style="margin-top: 30px;">What We Do:</h4>
         <ul class="what-we-do-list">
             <li>Live jazz & community music events</li>
-            <li>Expenses opportunities for emerging musicians and teaching opportunities</li>
+            <li>Expenses opportunities for emerging musicians</li>
             <li>Free access to public live performances</li>
-            <li>Supporting  local good causes & charities</li>
+            <li>Supporting local good causes & charities</li>
         </ul>
+    </div>
 
-        <div style="display:flex; gap:30px; margin-top:40px; padding-top:40px; border-top:1px solid #eee; align-items:flex-start;">
-            <img src="images/stephen-pierre.jpg" style="width:120px; height:120px; border-radius:50%; object-fit:cover; border:3px solid #e60000;" onerror="this.src='https://www.batterseajazzfestival.co.uk/wp-content/uploads/2022/07/stephen-pierre'" alt="Stephen Pierre">
-            <div>
+    <div class="content-block" style="margin-top:20px;">
+        <div style="display:flex; gap:30px; padding-top:20px; border-top:1px solid #eee; align-items:flex-start;">
+            <img src="images/stephen-pierre.jpg" style="width:120px; height:120px; border-radius:50%; object-fit:cover; border:3px solid #e60000;" alt="Stephen Pierre" data-editable="image">
+            <div data-editable="block">
                 <h3 style="margin:0; color:#e60000;">Stephen Pierre</h3>
                 <span style="font-weight:bold; font-size:0.9rem; color:#666;">Founder & Creative Director</span>
                 <p style="margin-top:10px; font-size:0.95rem;">A vocalist and creative director with a passion for community cohesion. Stephen founded UMAT to bridge the gap between music education and professional performance.</p>
@@ -54,46 +54,21 @@
         </div>
     </div>
 
-    <div class="why-matters-box">
+    <div class="why-matters-box" data-editable="block">
         <h3>Why It Matters</h3>
-        <p>Live music is becoming inaccessible for many young artists and audiences alike due to rising costs and venue closures. UMAT exists to keep community music alive, inclusive, and free for everyone, ensuring that financial barriers never stop someone from experiencing the joy of live jazz.</p>
+        <p>Live music is becoming inaccessible for many young artists due to venue closures. UMAT exists to keep community music alive, inclusive, and free for everyone.</p>
     </div>
 
-    <div class="content-block">
-        <div class="timeline-item">
-            <div class="year">2019</div>
-            <div class="milestone">Nominated for a <strong>Mayor of London Culture and Creative Award</strong>.</div>
-        </div>
-        <div class="timeline-item">
-            <div class="year">2020</div>
-            <div class="milestone">Recognised with a <strong>Southwark Business Excellence Award</strong> for our ‘Contribution to the Community’.</div>
-        </div>
-        <div class="timeline-item">
-            <div class="year">2021</div>
-            <div class="milestone">In May, UMAT presented its first outdoor jazz event at <strong>St John’s Church Garden Waterloo</strong>. <br><em>Outcome: Reconnected the community post-lockdown and supported by The Mayor of London Community Fund .</em></div>
-        </div>
-        <div class="timeline-item">
-            <div class="year">2022</div>
-            <div class="milestone">In June, we hosted our first outdoor jazz event at <strong>The Palm Tree Pub</strong> located in East London’s Mile End Park. <br><em>Outcome: Established a new regular cultural hub in East London.</em></div>
-        </div>
-        <div class="timeline-item">
-            <div class="year">2023</div>
-            <div class="milestone">The Palm Tree event returned in the summer re-named as <strong>‘Let’s Make Music & Dance’</strong> incorporating live jazz and salsa. <br><em>Outcome: Expanded our audience to include dance communities.</em></div>
-        </div>
-        <div class="timeline-item">
-            <div class="year">2024</div>
-            <div class="milestone">Continued growth with new venue partnerships across South London. <br><em>Outcome: Included supporting Pride In Southwark at Bermondsey Jazz .</em></div>
-        </div>
-        <div class="timeline-item">
-            <div class="year">2025</div>
-            <div class="milestone">Surpassed supporting over 300 musicians and creatives,  launched new community initiatives.</div>
-        </div>
+    <div class="content-block" data-editable="block">
+        <div class="timeline-item"><div class="year">2019</div><div class="milestone">Nominated for a <strong>Mayor of London Culture and Creative Award</strong>.</div></div>
+        <div class="timeline-item"><div class="year">2020</div><div class="milestone">Recognised with a <strong>Southwark Business Excellence Award</strong>.</div></div>
+        <div class="timeline-item"><div class="year">2021</div><div class="milestone">First outdoor jazz event at <strong>St John’s Church Garden Waterloo</strong>.</div></div>
+        <div class="timeline-item"><div class="year">2022</div><div class="milestone">Launched at <strong>The Palm Tree Pub</strong> in Mile End Park.</div></div>
+        <div class="timeline-item"><div class="year">2024</div><div class="milestone">Supporting Pride In Southwark at Bermondsey Jazz.</div></div>
+        <div class="timeline-item"><div class="year">2025</div><div class="milestone">Surpassed supporting over 300 musicians and creatives.</div></div>
     </div>
 </div>
 
-<footer>
-
-   <p>© 2026 Unity Music Arts Team CIC registration 12987857</p>
-
+<footer><p>© 2026 Unity Music Arts Team CIC</p></footer>
 </body>
 </html>
