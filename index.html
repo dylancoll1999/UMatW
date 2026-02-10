@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMAT | Unity Music Arts Team</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -17,12 +18,12 @@
             <a href="index.html" class="nav-link active">Home</a>
             <a href="events.html" class="nav-link">Events</a>
             <a href="about.html" class="nav-link">About</a>
-            <a href="/donate" class="nav-donate">Donate</a>
+            <a href="https://www.justgiving.com/crowdfunding/umatcommunity" class="nav-donate">Donate</a>
         </nav>
     </div>
 </header>
 
-<div class="home-hero reveal">
+<div class="home-hero reveal editable">
     <div class="hero-content">
         <a href="events.html" class="countdown-badge" id="next-badge">Next G: Loading...</a>
         <h2>WE ARE UMAT</h2>
@@ -64,7 +65,7 @@
 
 <div class="container reveal">
     <div style="margin: 80px 0;">
-        <div class="founder-section">
+        <div class="founder-section editable">
             <img src="images/5.jpg" style="width:100%; height:300px; object-fit:cover; border-radius:4px;" alt="Stephen Pierre">
             <div>
                 <h3 style="font-size:2.5rem; margin:0; color:var(--red); font-weight:900;">OUR MISSION</h3>
@@ -78,7 +79,7 @@
 <div class="bg-dark reveal">
     <div class="container">
         <div class="video-section">
-            <div>
+            <div class="editable">
                 <h3 style="font-size:2.5rem; margin-top:0; font-weight:900;">EXPERIENCE THE SOUND</h3>
                 <p>Watch highlights from our sessions featuring some of London's brightest new jazz talent.</p>
                 <a href="events.html" class="btn-red" style="margin-top:20px;">View Schedule</a>
@@ -91,7 +92,7 @@
 </div>
 
 <div class="container reveal">
-    <div class="highlights-grid">
+    <div class="highlights-grid editable">
         <div class="highlight-card" style="background-image: url('images/69815254_2558772900812001_2079160837263589376_n.jpg');"><div class="highlight-overlay"><span class="highlight-title">Summer Opener</span><br><span class="highlight-date">June 2025</span></div></div>
         <div class="highlight-card" style="background-image: url('images/he-Band-Stand.jpg');"><div class="highlight-overlay"><span class="highlight-title">Bandstand Jazz</span><br><span class="highlight-date">June 2024</span></div></div>
         <div class="highlight-card" style="background-image: url('images/286520599_5327856470570283_3346727282786908896_n.jpg');"><div class="highlight-overlay"><span class="highlight-title">Mile End Sessions</span><br><span class="highlight-date">August 2024</span></div></div>
@@ -119,8 +120,7 @@
 </div>
 
 <footer>
-        <p>© 2026 Unity Music Arts Team CIC registration 12987857</p>
-</p>
+    <p>© 2026 Unity Music Arts Team CIC registration 12987857</p>
 </footer>
 
 <button id="back-to-top" title="Go to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
@@ -176,7 +176,7 @@
     const venues = [
         { title: 'The Bird in Hand', img: 'images/jazzjamcicrusBAND3.jpg', nextDate: 'Last Sunday of Month', link: 'bird-in-hand.html' },
         { title: 'Bermondsey Square', img: 'images/322110607_569423415027414_3783644028259934961_n.jpg', nextDate: 'Sun 3rd May', link: 'bermondsey.html' },
-        { title: 'The Blue Market', img: 'images/111.jpg', nextDate: 'Sat 30th May', link: 'blue-market.html' },
+        { title: 'The Blue Market', img: 'images/letsmakemusidancing.jpeg', nextDate: 'Sat 30th May', link: 'blue-market.html' },
         { title: 'The Palm Tree', img: 'images/333-1.jpg', nextDate: 'Sun 14th June', link: 'palm-tree.html' },
         { title: 'St Johns Waterloo', img: 'images/StJohnsGardenBand2.jpeg', nextDate: 'Sun 12th July', link: 'st-johns.html' },
         { title: 'Southwark Park', img: 'images/he-Band-Stand.jpg', nextDate: 'Sun 28th June', link: 'southwark.html' }
