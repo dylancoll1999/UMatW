@@ -23,7 +23,7 @@
 </header>
 
 <div class="home-hero reveal">
-    <div class="hero-content editable">
+    <div class="hero-content">
         <a href="events.html" class="countdown-badge" id="next-badge">Next G: Loading...</a>
         <h2>WE ARE UMAT</h2>
         <p>Grassroots community events supporting London's finest student and graduate musicians.</p>
@@ -32,7 +32,7 @@
 </div>
 
 <div class="container">
-    <div class="award-strip reveal editable">
+    <div class="award-strip reveal">
         <div class="award-item">🏆 Mayor of London Culture Award Nominee</div>
         <div class="award-item">⭐ Southwark Business Excellence Award</div>
         <div class="award-item">💡 London Festival of Ideas</div>
@@ -41,7 +41,7 @@
 
 <div class="bg-light reveal">
     <div class="container">
-        <div class="partner-strip editable">
+        <div class="partner-strip">
             <div class="partner-text">Supported By</div>
             <div class="partner-logos">
                 <span>BERMONDSEY COMMUNITY SQUARE FUND</span> • <span>SOUTHWARK COUNCIL</span> • <span>THE BLUE BERMONDSEY BID</span> 
@@ -49,7 +49,7 @@
         </div>
 
         <div class="section-header">
-            <h3 class="editable">Upcoming Venues</h3>
+            <h3>Upcoming Venues</h3>
             <div class="scroll-controls">
                 <button class="scroll-arrow-btn" onclick="moveScroll('left')">←</button>
                 <button class="scroll-arrow-btn" onclick="moveScroll('right')">→</button>
@@ -65,8 +65,8 @@
 <div class="container reveal">
     <div style="margin: 80px 0;">
         <div class="founder-section">
-            <img src="images/5.jpg" style="width:100%; height:300px; object-fit:cover; border-radius:4px;" alt="Stephen Pierre" class="editable">
-            <div class="editable">
+            <img src="images/5.jpg" style="width:100%; height:300px; object-fit:cover; border-radius:4px;" alt="Stephen Pierre">
+            <div>
                 <h3 style="font-size:2.5rem; margin:0; color:var(--red); font-weight:900;">OUR MISSION</h3>
                 <p>We are a grassroots community music company (CIC) based in London. Our primary objective is to showcase and support the talents of both aspiring and seasoned musicians.</p>
                 <a href="about.html" style="color:var(--red); font-weight:bold;">Read Our Story →</a>
@@ -78,12 +78,12 @@
 <div class="bg-dark reveal">
     <div class="container">
         <div class="video-section">
-            <div class="editable">
+            <div>
                 <h3 style="font-size:2.5rem; margin-top:0; font-weight:900;">EXPERIENCE THE SOUND</h3>
                 <p>Watch highlights from our sessions featuring some of London's brightest new jazz talent.</p>
                 <a href="events.html" class="btn-red" style="margin-top:20px;">View Schedule</a>
             </div>
-            <div class="video-wrapper editable">
+            <div class="video-wrapper">
                 <iframe src="https://www.facebook.com/plugins/video.php?height=315&href=https%3A%2F%2Fwww.facebook.com%2Fvideo.php%3Fv%3D1107979351462973&show_text=false&width=560&t=0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
             </div>
         </div>
@@ -91,7 +91,7 @@
 </div>
 
 <div class="container reveal">
-    <div class="highlights-grid editable">
+    <div class="highlights-grid">
         <div class="highlight-card" style="background-image: url('images/69815254_2558772900812001_2079160837263589376_n.jpg');"><div class="highlight-overlay"><span class="highlight-title">Summer Opener</span><br><span class="highlight-date">June 2025</span></div></div>
         <div class="highlight-card" style="background-image: url('images/he-Band-Stand.jpg');"><div class="highlight-overlay"><span class="highlight-title">Bandstand Jazz</span><br><span class="highlight-date">June 2024</span></div></div>
         <div class="highlight-card" style="background-image: url('images/286520599_5327856470570283_3346727282786908896_n.jpg');"><div class="highlight-overlay"><span class="highlight-title">Mile End Sessions</span><br><span class="highlight-date">August 2024</span></div></div>
@@ -99,7 +99,7 @@
     </div>
 
     <div style="margin: 80px 0;" class="impact-box">
-        <div class="impact-grid editable">
+        <div class="impact-grid">
             <div class="stat"><span class="stat-icon">🎷</span><h3><span class="stat-num" data-target="300">0</span>+</h3><p>Musicians Supported</p></div>
             <div class="stat"><span class="stat-icon">🎟️</span><h3><span class="stat-num" data-target="100">0</span>%</h3><p>Free Entry Events</p></div>
             <div class="stat"><span class="stat-icon">📅</span><h3><span class="stat-num" data-target="8">0</span></h3><p>Years of Jazz</p></div>
@@ -107,7 +107,7 @@
         </div>
     </div>
 
-    <div class="donate-section editable">
+    <div class="donate-section">
         <h2>Help Local Musicians</h2>
         <p style="font-size:1.1rem; color:#555; max-width:700px; margin: 0 auto 30px;">We are 80% of the way to our goal! Join 270 supporters.</p>
         <div class="progress-wrap">
@@ -120,11 +120,13 @@
 
 <footer>
         <p>© 2026 Unity Music Arts Team CIC registration 12987857</p>
+</p>
 </footer>
 
 <button id="back-to-top" title="Go to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
 <script>
+    // 1. MASTER SCHEDULE 2026 (Updated with Today's Date & Last Sundays)
     const allEvents = [
         { date: '2026-01-25', title: 'Bird in Hand', link: 'bird-in-hand.html' },
         { date: '2026-02-22', title: 'Bird in Hand', link: 'bird-in-hand.html' },
@@ -147,22 +149,30 @@
         { date: '2026-09-27', title: 'Bird in Hand', link: 'bird-in-hand.html' }
     ];
 
+    // FIND THE NEXT EVENT
     const today = new Date();
+    // Sort logic just in case the list above is out of order
     allEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
+    
+    // Find first event where date >= today (end of today)
     const nextEvent = allEvents.find(e => {
         const eventDate = new Date(e.date);
-        eventDate.setHours(23, 59, 59);
+        eventDate.setHours(23, 59, 59); // Ensure today counts as valid until midnight
         return eventDate >= today;
     }) || allEvents[0]; 
 
+    // Format the date for the badge
     const dateObj = new Date(nextEvent.date);
     const options = { weekday: 'short', day: 'numeric', month: 'short' };
     const dateStr = dateObj.toLocaleDateString('en-GB', options);
 
+    // Update Badge in Hero
     const badge = document.getElementById('next-badge');
     badge.innerText = `Next: ${nextEvent.title} (${dateStr})`;
     badge.href = nextEvent.link;
 
+
+    // 2. VENUE LIST SCROLLER
     const venues = [
         { title: 'The Bird in Hand', img: 'images/jazzjamcicrusBAND3.jpg', nextDate: 'Last Sunday of Month', link: 'bird-in-hand.html' },
         { title: 'Bermondsey Square', img: 'images/322110607_569423415027414_3783644028259934961_n.jpg', nextDate: 'Sun 3rd May', link: 'bermondsey.html' },
@@ -209,6 +219,7 @@
     }
     loop();
 
+    // 3. STATS ANIMATION
     function animateValue(obj, start, end, duration) {
         let startTimestamp = null;
         const step = (timestamp) => {
