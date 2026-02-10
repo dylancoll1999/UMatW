@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Blue Market Bermondsey | UMAT</title>
     <meta name="description" content="Free live music and salsa dancing at The Blue Market Bermondsey. Join us for community choirs, brass bands, and dance sessions.">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
@@ -14,35 +13,15 @@
             position: relative;
             height: 60vh;
             min-height: 400px;
-            overflow: hidden; /* Ensures image stays inside */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('images/letsmakemusidancing.jpeg');
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: flex-end;
             color: white;
             margin-bottom: 40px;
         }
-        /* New Style to make Hero Image Editable */
-        .hero-bg-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7));
-            z-index: 1;
-            pointer-events: none; /* Lets you click through to the image if needed */
-        }
         .venue-hero-content {
-            position: relative;
-            z-index: 2;
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
@@ -161,15 +140,10 @@
 </header>
 
 <div class="venue-hero">
-    <img src="images/letsmakemusidancing.jpeg" class="hero-bg-img editable" alt="Hero Background">
-    <div class="hero-overlay"></div>
-    
     <div class="venue-hero-content">
         <span class="venue-tag">Free Entry</span>
-        <div class="editable">
-            <h1>Let's Make Music & Dance<br>at The Blue Market 2026</h1>
-            <p style="font-size: 1.2rem; opacity: 0.9; margin-top:10px;">Live Music Acts & Salsa Dancing Sessions</p>
-        </div>
+        <h1>Let's Make Music & Dance<br>at The Blue Market 2026</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9; margin-top:10px;">Live Music Acts & Salsa Dancing Sessions</p>
     </div>
 </div>
 
@@ -182,19 +156,17 @@
         <div>
             <h2 style="margin-top:0; font-size: 2rem; color:var(--dark);">About the Event</h2>
             
-            <div class="editable">
-                <p style="font-size:1.1rem; line-height:1.6; color:#444;">
-                    The Blue (Bermondsey) community is enriched by the wonderful events organized at the Blue Market place. We are pleased to be back with a <strong>song and dance event (SATURDAY 30th MAY 2026) </strong>.
-                </p>
-                <p style="font-size:1.1rem; line-height:1.6; color:#444;">
-                    This special annual event will include various music ensembles, community choir, brass band, vocal performances and Salsa dancing. Each year we will pay a posthumous tribute to the late great community hero Russell Dryden who sadly passed away in May 2024. Russell was a local champion who lived and breathed music and community enrichment at The Blue Market. <strong>Everyone is welcome to participate</strong> in the dance sessions.
-                </p>
-            </div>
+            <p style="font-size:1.1rem; line-height:1.6; color:#444;">
+                The Blue (Bermondsey) community is enriched by the wonderful events organized at the Blue Market place. We are pleased to be back with a <strong>song and dance event (SATURDAY 30th MAY 2026) </strong>.
+            </p>
+            <p style="font-size:1.1rem; line-height:1.6; color:#444;">
+                This special annual event will include various music ensembles, community choir, brass band, vocal performances and Salsa dancing. Each year we  will pay a posthumous tribute to the late great community hero Russell Dryden who sadly passed away in May 2024. Russell was a local  champion who lived and breathed music and community enrichment at The Blue Market .  <strong>Everyone is welcome to participate</strong> in the dance sessions.
+            </p>
 
             <h3 style="margin-top: 40px; margin-bottom: 20px; color: var(--red); font-size:1.5rem; text-transform:uppercase;">2026 Schedule</h3>
             
             <div class="date-card">
-                <div class="editable" style="width:100%;">
+                <div>
                     <div class="date-day">Saturday 30th May 2026</div>
                     <div class="date-time">1:00pm - 4:00pm</div>
                     <div class="date-mes">Paying tribute to the late and great Mr Russell Dryden</div>
@@ -203,11 +175,10 @@
             </div>
 
             <h3 style="margin-top: 60px; margin-bottom: 20px; color: var(--dark); font-size:1.5rem;">Memories from The Blue Market</h3>
-            
             <div class="gallery-grid">
-                <img src="images/letsmakemusic.jpeg" class="gallery-img editable" alt="Live Music Performance">
-                <img src="images/letsmakemusidancing.jpeg" class="gallery-img editable" alt="Dancing at The Blue Market">
-                <img src="images/letsmakemusidancing2.jpeg" class="gallery-img editable" alt="Salsa Dancing">
+                <img src="images/letsmakemusic.jpeg" class="gallery-img" alt="Live Music Performance">
+                <img src="images/letsmakemusidancing.jpeg" class="gallery-img" alt="Dancing at The Blue Market">
+                <img src="images/letsmakemusidancing2.jpeg" class="gallery-img" alt="Salsa Dancing">
             </div>
 
         </div>
@@ -244,7 +215,7 @@
 
                 <a href="https://goo.gl/maps/xyz" target="_blank" class="btn-red" style="width:100%; text-align:center; box-sizing:border-box;">Get Directions</a>
 
-                <iframe class="map-frame" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.0650%2C51.4920%2C-0.0610%2C51.4940&layer=mapnik&marker=51.4930%2C-0.0630"></iframe>
+                <iframe class="map-frame" src="https://maps.google.com/maps?q=The+Blue+Market+Bermondsey&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </aside>
 
@@ -261,6 +232,7 @@
 
 <footer>
     <p>© 2026 Unity Music Arts Team CIC registration 12987857</p>
+</p>
 </footer>
 
 </body>
