@@ -1,108 +1,239 @@
----
-title: "Let's Make Music & Dance at The Blue Market 2026"
-subtitle: "Live Music Acts & Salsa Dancing Sessions"
-hero_image: "images/letsmakemusidancing.jpeg"
-about_title: "About the Event"
-about_text: |
-  The Blue (Bermondsey) community is enriched by the wonderful events organized at the Blue Market place. We are pleased to be back with a <strong>song and dance event (SATURDAY 30th MAY 2026)</strong>.
-  <br><br>
-  This special annual event will include various music ensembles, community choir, brass band, vocal performances and Salsa dancing. Each year we will pay a posthumous tribute to the late great community hero Russell Dryden who sadly passed away in May 2024. Russell was a local champion who lived and breathed music and community enrichment at The Blue Market. <strong>Everyone is welcome to participate</strong> in the dance sessions.
-schedule_items:
-  - date: "Saturday 30th May 2026"
-    time: "1:00pm - 4:00pm"
-    details: "Paying tribute to the late and great Mr Russell Dryden"
-gallery_images:
-  - image: "images/letsmakemusic.jpeg"
-    alt: "Live Music Performance"
-  - image: "images/letsmakemusidancing.jpeg"
-    alt: "Dancing at The Blue Market"
-  - image: "images/letsmakemusidancing2.jpeg"
-    alt: "Salsa Dancing"
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
-@@ -14,7 +35,7 @@
-position: relative;
-height: 60vh;
-min-height: 400px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Blue Market Bermondsey | UMAT</title>
+    <meta name="description" content="Free live music and salsa dancing at The Blue Market Bermondsey. Join us for community choirs, brass bands, and dance sessions.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Page Specific Styles */
+        .venue-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('images/letsmakemusidancing.jpeg');
-            /* IMAGE EDITABLE REGION */
-background-size: cover;
-background-position: center;
-display: flex;
-@@ -140,11 +161,14 @@
-</div>
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            color: white;
+            margin-bottom: 40px;
+        }
+        .venue-hero-content {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .venue-hero h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            text-transform: uppercase;
+            line-height: 1;
+        }
+        .venue-tag {
+            background: #28a745;
+            color: white;
+            padding: 5px 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* Layout Grid */
+        .venue-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        /* Dates List */
+        .date-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            border: 1px solid #eee;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .date-card:hover {
+            border-color: var(--red);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .date-day { font-size: 1.2rem; font-weight: bold; color: #1a1a1a; }
+        .date-time { color: #666; }
+
+        /* Sidebar info */
+        .info-box {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid var(--red);
+        }
+        .info-item { margin-bottom: 20px; }
+        .info-label { font-weight: bold; display: block; color: #1a1a1a; margin-bottom: 5px; }
+        
+        /* Clickable Links */
+        .info-link { color: #555; text-decoration: underline; transition: 0.2s; }
+        .info-link:hover { color: var(--red); }
+        .info-text { color: #555; margin: 0; }
+
+        .map-frame {
+            width: 100%;
+            height: 250px;
+            border: 0;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .gallery-img:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        @media (max-width: 768px) {
+            .venue-hero h1 { font-size: 2.5rem; }
+            .venue-grid { grid-template-columns: 1fr; }
+            .date-card { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .date-card .btn-red { width: 100%; text-align: center; box-sizing: border-box; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="index.html">
+            <img src="images/UMAT-e1673627924885.png" alt="UMAT Logo" class="logo-img">
+        </a>
+        <button class="mobile-menu-btn" onclick="document.querySelector('.main-nav').classList.toggle('active')">☰</button>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="events.html" class="nav-link">Events</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="https://www.justgiving.com/crowdfunding/umatcommunity" class="nav-donate">Donate</a>
+        </nav>
+    </div>
 </header>
 
 <div class="venue-hero">
-<div class="venue-hero" 
-     style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('{{ page.hero_image }}');"
-     data-editable="image"
-     data-prop-src="hero_image">
-<div class="venue-hero-content">
-<span class="venue-tag">Free Entry</span>
-        <h1 class="editable">Let's Make Music & Dance<br>at The Blue Market 2026</h1>
-        <p style="font-size: 1.2rem; opacity: 0.9; margin-top:10px;" class="editable">Live Music Acts & Salsa Dancing Sessions</p>
-        <h1 data-editable="text" data-prop="title">{{ page.title }}</h1>
-        <p style="font-size: 1.2rem; opacity: 0.9; margin-top:10px;" data-editable="text" data-prop="subtitle">{{ page.subtitle }}</p>
-</div>
+    <div class="venue-hero-content">
+        <span class="venue-tag">Free Entry</span>
+        <h1>Let's Make Music & Dance<br>at The Blue Market 2026</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9; margin-top:10px;">Live Music Acts & Salsa Dancing Sessions</p>
+    </div>
 </div>
 
-@@ -155,33 +179,38 @@ <h1 class="editable">Let's Make Music & Dance<br>at The Blue Market 2026</h1>
-<div class="venue-grid">
+<div class="container">
+    
+    <a href="index.html" style="display:inline-block; margin-bottom: 30px; color:#666; font-weight:bold; text-decoration:none;">← Back to Home</a>
 
-<div>
+    <div class="venue-grid">
+        
+        <div>
             <h2 style="margin-top:0; font-size: 2rem; color:var(--dark);">About the Event</h2>
-            <h2 style="margin-top:0; font-size: 2rem; color:var(--dark);" data-editable="text" data-prop="about_title">{{ page.about_title }}</h2>
+            
+            <p style="font-size:1.1rem; line-height:1.6; color:#444;">
+                The Blue (Bermondsey) community is enriched by the wonderful events organized at the Blue Market place. We are pleased to be back with a <strong>song and dance event (SATURDAY 30th MAY 2026) </strong>.
+            </p>
+            <p style="font-size:1.1rem; line-height:1.6; color:#444;">
+                This special annual event will include various music ensembles, community choir, brass band, vocal performances and Salsa dancing. Each year we  will pay a posthumous tribute to the late great community hero Russell Dryden who sadly passed away in May 2024. Russell was a local  champion who lived and breathed music and community enrichment at The Blue Market .  <strong>Everyone is welcome to participate</strong> in the dance sessions.
+            </p>
 
-            <div class="editable">
-                <p style="font-size:1.1rem; line-height:1.6; color:#444;">
-                    The Blue (Bermondsey) community is enriched by the wonderful events organized at the Blue Market place. We are pleased to be back with a <strong>song and dance event (SATURDAY 30th MAY 2026) </strong>.
-                </p>
-                <p style="font-size:1.1rem; line-height:1.6; color:#444;">
-                    This special annual event will include various music ensembles, community choir, brass band, vocal performances and Salsa dancing. Each year we will pay a posthumous tribute to the late great community hero Russell Dryden who sadly passed away in May 2024. Russell was a local champion who lived and breathed music and community enrichment at The Blue Market . <strong>Everyone is welcome to participate</strong> in the dance sessions.
-                </p>
-            <div data-editable="text" data-prop="about_text">
-                {{ page.about_text }}
-</div>
-
-<h3 style="margin-top: 40px; margin-bottom: 20px; color: var(--red); font-size:1.5rem; text-transform:uppercase;">2026 Schedule</h3>
-
+            <h3 style="margin-top: 40px; margin-bottom: 20px; color: var(--red); font-size:1.5rem; text-transform:uppercase;">2026 Schedule</h3>
+            
             <div class="date-card">
-                <div class="editable" style="width:100%;">
+                <div>
                     <div class="date-day">Saturday 30th May 2026</div>
                     <div class="date-time">1:00pm - 4:00pm</div>
                     <div class="date-mes">Paying tribute to the late and great Mr Russell Dryden</div>
-            <div data-editable="array" data-prop="schedule_items">
-                {% for item in page.schedule_items %}
-                <div class="date-card" data-editable="array-item">
-                    <div>
-                        <div class="date-day">{{ item.date }}</div>
-                        <div class="date-time">{{ item.time }}</div>
-                        <div class="date-mes">{{ item.details }}</div>
-                    </div>
-                    <a href="#" class="btn-red" style="padding: 8px 20px; font-size: 0.8rem; margin:0;">Add to Cal</a>
-</div>
+                </div>
                 <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=The+Blue+Market+Music+and+Dance&location=The+Blue+Market+Bermondsey+London" target="_blank" class="btn-red" style="padding: 8px 20px; font-size: 0.8rem; margin:0;">Add to Cal</a>
-                {% endfor %}
-</div>
+            </div>
 
-<h3 style="margin-top: 60px; margin-bottom: 20px; color: var(--dark); font-size:1.5rem;">Memories from The Blue Market</h3>
+            <h3 style="margin-top: 60px; margin-bottom: 20px; color: var(--dark); font-size:1.5rem;">Memories from The Blue Market</h3>
             <div class="gallery-grid">
-                <img src="images/letsmakemusic.jpeg" class="gallery-img editable" alt="Live Music Performance">
-                <img src="images/letsmakemusidancing.jpeg" class="gallery-img editable" alt="Dancing at The Blue Market">
-                <img src="images/letsmakemusidancing2.jpeg" class="gallery-img editable" alt="Salsa Dancing">
-            
-            <div class="gallery-grid" data-editable="array" data-prop="gallery_images">
-                {% for item in page.gallery_images %}
-                <img src="{{ item.image }}" 
-                     class="gallery-img" 
-                     alt="{{ item.alt }}" 
-                     data-editable="image" 
-                     data-prop-src="image"
-                     data-prop-alt="alt">
-                {% endfor %}
+                <img src="images/letsmakemusic.jpeg" class="gallery-img" alt="Live Music Performance">
+                <img src="images/letsmakemusidancing.jpeg" class="gallery-img" alt="Dancing at The Blue Market">
+                <img src="images/letsmakemusidancing2.jpeg" class="gallery-img" alt="Salsa Dancing">
+            </div>
+
+        </div>
+
+        <aside>
+            <div class="info-box">
+                <div class="info-item">
+                    <span class="info-label">📍 Address</span>
+                    <p style="margin:0;">
+                        <a href="https://goo.gl/maps/xyz" target="_blank" class="info-link">
+                            The Blue Market Bermondsey<br>
+                            Market Place, London SE16 3UQ
+                        </a>
+                    </p>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-label">🚇 Nearest Transport</span>
+                    <p style="margin:0;">
+                        <a href="https://goo.gl/maps/xyz" target="_blank" class="info-link">Bermondsey</a> (Jubilee)<br>
+                        <a href="https://goo.gl/maps/xyz" target="_blank" class="info-link">South Bermondsey</a> (Rail)
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">♿ Accessibility & Equality</span>
+                    <p class="info-text">These free outdoor events proudly include a disability access toilet and event seating to support equality and inclusiveness.</p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">🌦️ Weather Policy</span>
+                    <p class="info-text">Events are outdoors. In case of heavy rain, updates will be posted on our Facebook page.</p>
+                </div>
+
+                <a href="https://goo.gl/maps/xyz" target="_blank" class="btn-red" style="width:100%; text-align:center; box-sizing:border-box;">Get Directions</a>
+
+                <iframe class="map-frame" src="https://maps.google.com/maps?q=The+Blue+Market+Bermondsey&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </aside>
+
+    </div>
 </div>
 
+<div class="bg-light" style="padding: 60px 0; text-align:center;">
+    <div class="container">
+        <h3>Support Local Music & Community</h3>
+        <p style="max-width:600px; margin: 0 auto 30px; color:#555;">UMAT events are supported by public donations to help cover production costs and support community projects.</p>
+        <a href="https://www.justgiving.com/crowdfunding/umatcommunity" class="btn-red">Make a Donation</a>
+    </div>
 </div>
+
+<footer>
+    <p>© 2026 Unity Music Arts Team CIC registration 12987857</p>
+</p>
+</footer>
+
+</body>
+</html>
