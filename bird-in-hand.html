@@ -4,148 +4,188 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title data-editable="source" data-path="/bird-in-hand.html" data-key="page_title">
+    <title data-editable="source" data-key="page_title">
         The Bird in Hand Jazz & Jam | UMAT
     </title>
 
     <meta name="description"
-          data-editable="source"
-          data-path="/bird-in-hand.html"
-          data-key="meta_description"
           content="Monthly Jazz & Jam session at The Bird in Hand, Forest Hill. Join us on the last Sunday of every month. Free entry.">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+
     <style>
-        /* styles unchanged */
+        /* Page Specific Styles — unchanged */
+        .venue-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('images/jazzjamcicrusBAND3.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            color: white;
+            margin-bottom: 40px;
+        }
     </style>
 </head>
+
 <body>
 
 <header>
     <div class="header-inner">
         <a href="index.html">
-            <img src="images/UMAT-e1673627924885.png"
-                 alt="UMAT Logo"
-                 class="logo-img"
-                 data-editable="source"
-                 data-path="/bird-in-hand.html"
-                 data-key="logo_alt">
+            <img
+                src="images/UMAT-e1673627924885.png"
+                alt="UMAT Logo"
+                class="logo-img"
+                data-editable="image"
+                data-prop-src="logo_image"
+                data-prop-alt="logo_alt"
+            >
         </a>
+
         <button class="mobile-menu-btn" onclick="document.querySelector('.main-nav').classList.toggle('active')">☰</button>
+
         <nav class="main-nav">
-            <a href="index.html" class="nav-link" data-editable="source" data-path="/bird-in-hand.html" data-key="nav_home">Home</a>
-            <a href="events.html" class="nav-link" data-editable="source" data-path="/bird-in-hand.html" data-key="nav_events">Events</a>
-            <a href="about.html" class="nav-link" data-editable="source" data-path="/bird-in-hand.html" data-key="nav_about">About</a>
-            <a href="https://www.justgiving.com/crowdfunding/umatcommunity" class="nav-donate" data-editable="source" data-path="/bird-in-hand.html" data-key="nav_donate">Donate</a>
+            <a href="index.html" class="nav-link" data-editable="source" data-key="nav_home">Home</a>
+            <a href="events.html" class="nav-link" data-editable="source" data-key="nav_events">Events</a>
+            <a href="about.html" class="nav-link" data-editable="source" data-key="nav_about">About</a>
+            <a href="https://www.justgiving.com/crowdfunding/umatcommunity" class="nav-donate" data-editable="source" data-key="nav_donate">Donate</a>
         </nav>
     </div>
 </header>
 
 <div class="venue-hero">
     <div class="venue-hero-content">
-        <span class="venue-tag"
-              data-editable="source"
-              data-path="/bird-in-hand.html"
-              data-key="venue_tag">New Venue</span>
 
-        <h1 data-editable="source" data-path="/bird-in-hand.html" data-key="hero_title">
+        <span class="venue-tag" data-editable="source" data-key="venue_tag">
+            New Venue
+        </span>
+
+        <h1 data-editable="source" data-key="hero_title">
             Jazz & Jam at<br>The Bird in Hand 2026
         </h1>
 
-        <p data-editable="source"
-           data-path="/bird-in-hand.html"
-           data-key="hero_subtitle"
-           style="font-size: 1.2rem; opacity: 0.9; margin-top:10px;">
+        <p style="font-size:1.2rem; opacity:0.9; margin-top:10px;"
+           data-editable="source"
+           data-key="hero_location">
             LAST Sunday Of Each Month in Forest Hill (London SE23 3HN)
         </p>
 
-        <p data-editable="source"
-           data-path="/bird-in-hand.html"
-           data-key="hero_time"
-           style="font-size: 1.6Xrem; opacity: 0.7; margin-top:10px;">
+        <p style="font-size:1.6rem; opacity:0.7; margin-top:10px;"
+           data-editable="source"
+           data-key="hero_time">
             4pm - 7pm
         </p>
+
     </div>
 </div>
 
 <div class="container">
 
     <a href="index.html"
+       style="display:inline-block; margin-bottom:30px; color:#666; font-weight:bold; text-decoration:none;"
        data-editable="source"
-       data-path="/bird-in-hand.html"
-       data-key="back_link"
-       style="display:inline-block; margin-bottom: 30px; color:#666; font-weight:bold; text-decoration:none;">
+       data-key="back_link">
         ← Back to Home
     </a>
 
     <div class="venue-grid">
 
         <div>
-            <h2 data-editable="source" data-path="/bird-in-hand.html" data-key="about_heading"
-                style="margin-top:0; font-size: 2rem; color:var(--dark);">
+
+            <h2 data-editable="source" data-key="about_heading">
                 About the Event
             </h2>
 
-            <p data-editable="source" data-path="/bird-in-hand.html" data-key="about_paragraph_1"
-               style="font-size:1.1rem; line-height:1.6; color:#444;">
-                We are pleased to announce a new monthly Jazz & Jam session now held at <strong>The Bird in Hand Pub</strong> in Forest Hill (SE23).
+            <p data-editable="source" data-key="about_text_1">
+                We are pleased to announce a new monthly Jazz & Jam session now held at
+                <strong>The Bird in Hand Pub</strong> in Forest Hill (SE23).
             </p>
 
-            <p data-editable="source" data-path="/bird-in-hand.html" data-key="about_paragraph_2"
-               style="font-size:1.1rem; line-height:1.6; color:#444;">
-                Hosted on the First Sunday of each month <strong>4pm - 7pm </strong>. We will welcome a different collective of student and graduate musicians to perform the first set, followed by a Jazz Jam hosted by <strong>Stephen Pierre</strong>.
+            <p data-editable="source" data-key="about_text_2">
+                Hosted on the First Sunday of each month <strong>4pm - 7pm</strong>.
+                We will welcome a different collective of student and graduate musicians
+                to perform the first set, followed by a Jazz Jam hosted by
+                <strong>Stephen Pierre</strong>.
             </p>
 
-            <p data-editable="source" data-path="/bird-in-hand.html" data-key="about_support"
-               style="font-size:1rem; color:#666;">
-                This monthly Jazz jam is proudly supported by <strong>umat.org.uk</strong> and <strong>Antic Inns</strong>.
+            <div></div>
+
+            <p data-editable="source" data-key="about_support">
+                This monthly Jazz jam is proudly supported by
+                <strong>umat.org.uk</strong> and <strong>Antic Inns</strong>.
             </p>
 
-            <h3 data-editable="source" data-path="/bird-in-hand.html" data-key="next_session_heading"
-                style="margin-top: 40px; margin-bottom: 20px; color: var(--red); font-size:1.5rem; text-transform:uppercase;">
+            <h3 data-editable="source" data-key="next_session_heading">
                 Next Session
             </h3>
 
-            <div class="date-card" style="border-left: 5px solid var(--red);">
+            <div class="date-card">
                 <div>
-                    <div class="date-day"
-                         data-editable="source"
-                         data-path="/bird-in-hand.html"
-                         data-key="session_day">
+                    <div class="date-day" data-editable="source" data-key="session_day">
                         LAST Sunday Of Each Month
                     </div>
 
-                    <div class="date-time"
-                         data-editable="source"
-                         data-path="/bird-in-hand.html"
-                         data-key="session_time">
-                        4:00pm - 7:00pm <br><span style="color:var(--dark); font-weight:bold; font-size:0.9rem;">Hosted by Stephen Pierre</span>
+                    <div class="date-time" data-editable="source" data-key="session_time">
+                        4:00pm - 7:00pm<br>
+                        <span style="font-weight:bold;">Hosted by Stephen Pierre</span>
                     </div>
                 </div>
             </div>
 
-            <h3 data-editable="source" data-path="/bird-in-hand.html" data-key="gallery_heading"
-                style="margin-top: 60px; margin-bottom: 20px; color: var(--dark); font-size:1.5rem;">
+            <h3 data-editable="source" data-key="gallery_heading">
                 Gallery
             </h3>
 
             <div class="gallery-grid">
-                <img src="images/Birdinhand.jpg" class="gallery-img" alt="Bird in Hand Jazz Session" data-editable="source" data-path="/bird-in-hand.html" data-key="gallery_1">
-                <img src="images/Birdinhand2.jpg" class="gallery-img" alt="Live Jazz Band" data-editable="source" data-path="/bird-in-hand.html" data-key="gallery_2">
-                <img src="images/Birdinhand3.jpg" class="gallery-img" alt="Musicians Posing" data-editable="source" data-path="/bird-in-hand.html" data-key="gallery_3">
-                <img src="images/Birdinhand4.jpg" class="gallery-img" alt="Pianist" data-editable="source" data-path="/bird-in-hand.html" data-key="gallery_4">
-                <img src="images/Birdinhand5.jpg" class="gallery-img" alt="Double Bass Player" data-editable="source" data-path="/bird-in-hand.html" data-key="gallery_5">
-                <img src="images/Birdinhand6.jpg" class="gallery-img" alt="Saxophone Player" data-editable="source" data-path="/bird-in-hand.html" data-key="gallery_6">
-                <img src="images/Birdinhand7.jpg" class="gallery-img" alt="Band Performing" data-editable="source" data-path="/bird-in-hand.html" data-key="gallery_7">
-                <img src="images/Birdinhand8.jpg" class="gallery-img" alt="Trumpet and Sax" data-editable="source" data-path="/bird-in-hand.html" data-key="gallery_8">
-                <img src="images/Birdinhand9.jpg" class="gallery-img" alt="Keyboard Player" data-editable="source" data-path="/bird-in-hand.html" data-key="gallery_9">
+
+                <img class="gallery-img"
+                     src="images/Birdinhand.jpg"
+                     alt="Bird in Hand Jazz Session"
+                     data-editable="image"
+                     data-prop-src="gallery_1_image"
+                     data-prop-alt="gallery_1_alt">
+
+                <img class="gallery-img"
+                     src="images/Birdinhand2.jpg"
+                     alt="Live Jazz Band"
+                     data-editable="image"
+                     data-prop-src="gallery_2_image"
+                     data-prop-alt="gallery_2_alt">
+
+                <img class="gallery-img"
+                     src="images/Birdinhand3.jpg"
+                     alt="Musicians Posing"
+                     data-editable="image"
+                     data-prop-src="gallery_3_image"
+                     data-prop-alt="gallery_3_alt">
+
+                <img class="gallery-img"
+                     src="images/Birdinhand4.jpg"
+                     alt="Pianist"
+                     data-editable="image"
+                     data-prop-src="gallery_4_image"
+                     data-prop-alt="gallery_4_alt">
+
             </div>
+
         </div>
 
         <aside>
             <div class="info-box">
-                <span class="info-label" data-editable="source" data-path="/bird-in-hand.html" data-key="address_label">📍 Address</span>
+
+                <span class="info-label" data-editable="source" data-key="address_label">
+                    📍 Address
+                </span>
+
+                <p data-editable="source" data-key="address_text">
+                    The Bird in Hand<br>
+                    35 Dartmouth Rd, London SE23 3HN
+                </p>
+
             </div>
         </aside>
 
@@ -153,7 +193,7 @@
 </div>
 
 <footer>
-    <p data-editable="source" data-path="/bird-in-hand.html" data-key="footer_text">
+    <p data-editable="source" data-key="footer_text">
         © 2026 Unity Music Arts Team CIC
     </p>
 </footer>
