@@ -1,0 +1,224 @@
+/* =========================================
+   1. CORE VARIABLES & RESET
+   ========================================= */
+:root {
+    --red: #e60000;
+    --dark: #1a1a1a;
+    --white: #fff;
+    --off-white: #f8f8f8;
+    --warm-grey: #f4f4f4;
+    --fb-blue: #1877F2;
+    --bg: #fdfdfd;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: var(--bg);
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .btn-red, .btn-link, .stat-num, .nav-link {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* =========================================
+   2. UNIFIED HEADER
+   ========================================= */
+header { 
+    text-align: center; padding: 10px 0; border-bottom: 1px solid #eee; 
+    background: white; position: relative; z-index: 1000;
+}
+.header-inner {
+    max-width: 1200px; margin: 0 auto; display: flex; 
+    align-items: center; justify-content: space-between; padding: 0 20px;
+}
+
+.logo-img { height: 70px; width: auto; object-fit: contain; display: block; }
+
+.main-nav { display: flex; gap: 25px; align-items: center; }
+.nav-link { 
+    text-decoration: none; color: #333; font-weight: 800; 
+    text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; 
+    padding-bottom: 5px; border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+.nav-link:hover, .nav-link.active { color: var(--red); border-bottom-color: var(--red); }
+.nav-donate { 
+    background: var(--red); color: white !important; padding: 10px 20px; border-radius: 4px; 
+    font-weight: 800; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;
+}
+.nav-donate:hover { background: #cc0000; transform: translateY(-2px); }
+
+.mobile-menu-btn { display: none; font-size: 1.5rem; background: none; border: none; cursor: pointer; color: var(--red); }
+
+/* =========================================
+   3. HOMEPAGE SECTIONS
+   ========================================= */
+.home-hero {
+    position: relative; min-height: 85vh; display: flex; align-items: center; justify-content: center;
+    text-align: center; color: white; margin-bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('../images/HeaderPhoto-e1673444417507.jpg');
+    background-size: cover; background-position: center; background-attachment: fixed;
+}
+.hero-content h2 { font-size: 4rem; margin: 0 0 15px; font-weight: 900; letter-spacing: -2px; line-height: 1; text-shadow: 0 4px 10px rgba(0,0,0,0.5); text-transform: uppercase; }
+.hero-content p { font-size: 1.3rem; margin: 0 auto 30px; font-weight: 300; opacity: 0.95; }
+.countdown-badge { background: var(--red); color: white; padding: 8px 20px; border-radius: 4px; font-weight: 700; font-size: 0.9rem; margin-bottom: 25px; display: inline-block; text-transform: uppercase; letter-spacing: 2px; }
+
+/* Backgrounds */
+.bg-light { background-color: #f4f6f8; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 80px 0; width: 100vw; margin-left: calc(-50vw + 50%); }
+.bg-dark { background-color: #111; color: white; padding: 80px 0; width: 100vw; margin-left: calc(-50vw + 50%); }
+.bg-dark h3 { color: white !important; }
+.bg-dark p { color: #ccc !important; }
+
+/* Strips */
+.award-strip { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; text-align: center; padding: 60px 0; }
+.award-item { display: flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 50px; background: #f9f9f9; border: 1px solid #eee; font-weight: bold; color: #555; }
+.partner-strip { text-align: center; margin-bottom: 40px; }
+.partner-text { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 3px; font-weight: 700; margin-bottom: 20px; color: #888; }
+.partner-logos { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; font-weight: 700; color: #444; font-size: 1.1rem; }
+
+/* Scroller */
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.section-header h3 { margin: 0; font-size: 2rem; color: var(--dark); text-transform: uppercase; letter-spacing: -1px; font-weight: 900; }
+.scroll-controls { display: flex; gap: 10px; }
+.scroll-arrow-btn { background: white; border: 1px solid #ccc; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; transition: 0.2s; color: #333; z-index: 10; line-height: 1; padding-bottom: 4px; }
+.scroll-arrow-btn:hover { background: var(--red); color: white; border-color: var(--red); }
+.venue-scroll-wrapper { overflow: hidden; white-space: nowrap; margin-bottom: 20px; position: relative; }
+.venue-scroll-container { display: inline-flex; gap: 30px; }
+.venue-box { width: 300px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; white-space: normal; flex-shrink: 0; text-decoration: none; border: 1px solid #eee; position: relative; }
+.venue-box:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+.venue-img { height: 180px; background-size: cover; background-position: center; }
+.venue-info { padding: 20px; }
+.venue-info h4 { margin: 0; color: #1a1a1a; font-weight: 800; font-size: 1.2rem; }
+.free-badge { position: absolute; top: 10px; right: 10px; background: #28a745; color: white; font-weight: 700; font-size: 0.7rem; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 2; }
+
+/* Sections */
+.video-section { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.video-wrapper iframe { width: 100%; height: 315px; border-radius: 8px; border:0; }
+.founder-section { display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; align-items: center; border-left: 8px solid var(--red); padding-left: 40px; }
+.highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+.highlight-card { height: 280px; background-size: cover; background-position: center; border-radius: 4px; position: relative; overflow: hidden; transition: 0.3s; }
+.highlight-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); color: white; }
+.highlight-title { font-weight: bold; display: block; }
+.highlight-date { font-size: 0.8rem; color: var(--red); font-weight: bold; }
+
+/* Impact Box */
+.impact-box { background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); padding: 60px; margin-bottom: 20px; border: 1px solid #eee; }
+.impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
+.stat-icon { font-size: 3rem; margin-bottom: 15px; display: block; }
+.stat h3 { font-size: 3rem; margin: 0; color: var(--red); line-height: 1; font-weight: 900; }
+.stat p { font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; font-size: 0.9rem; color: #555; }
+
+/* Donate */
+.donate-section { background: white; padding: 60px 40px; text-align: center; border-radius: 4px; margin-bottom: 60px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border-right: 10px solid var(--red); }
+.progress-wrap { max-width: 600px; margin: 0 auto 30px; text-align: left; }
+.progress-label { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px; font-size: 0.9rem; color: #555; }
+.progress-bar-bg { background: #eee; height: 15px; border-radius: 10px; overflow: hidden; }
+.progress-fill { background: var(--red); height: 100%; width: 0; border-radius: 10px; transition: width 1.5s ease-out; }
+
+/* =========================================
+   4. VENUE PAGE STYLES
+   ========================================= */
+.venue-hero { position: relative; height: 60vh; min-height: 400px; background-size: cover; background-position: center; display: flex; align-items: flex-end; color: white; margin-bottom: 40px; }
+.venue-hero-content { width: 100%; max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+.venue-hero h1 { font-size: 3.5rem; margin: 0; text-shadow: 0 4px 10px rgba(0,0,0,0.5); text-transform: uppercase; line-height: 1; }
+.venue-tag { background: #28a745; color: white; padding: 5px 12px; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; border-radius: 4px; display: inline-block; margin-bottom: 15px; }
+.venue-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 50px; margin-bottom: 80px; }
+
+/* Date Cards - BIGGER DATES HERE */
+.date-card { display: flex; justify-content: space-between; align-items: center; background: white; border: 1px solid #eee; padding: 25px; margin-bottom: 15px; border-radius: 8px; transition: 0.3s; }
+.date-card:hover { border-color: var(--red); transform: translateX(5px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.date-day { 
+    font-size: 1.6rem; /* INCREASED */
+    font-weight: 800; 
+    color: #1a1a1a; 
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+.date-time { 
+    color: #666; 
+    font-size: 1.1rem; /* INCREASED */
+    margin-top: 5px;
+}
+
+/* Info Sidebar */
+.info-box { background: #f9f9f9; padding: 30px; border-radius: 8px; border-top: 4px solid var(--red); }
+.info-item { margin-bottom: 20px; }
+.info-label { font-weight: bold; display: block; color: #1a1a1a; margin-bottom: 5px; }
+.info-link { color: #555; text-decoration: underline; transition: 0.2s; }
+.info-link:hover { color: var(--red); }
+.info-text { color: #555; margin: 0; }
+.map-frame { width: 100%; height: 250px; border: 0; border-radius: 8px; margin-top: 20px; }
+
+/* Gallery */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px; }
+.gallery-img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: 0.3s; cursor: pointer; }
+.gallery-img:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+/* =========================================
+   5. EVENTS & ABOUT UTILS
+   ========================================= */
+.slider-wrap { position: relative; background: #1a1a1a; border-radius: 12px; margin: 40px 0; overflow: hidden; border-left: 10px solid var(--red); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+.slides-inner { display: flex; transition: transform 0.6s ease; width: 100%; }
+.slide { min-width: 100%; display: flex; flex-direction: row; color: white; }
+.hero-img { width: 45%; background-size: cover; background-position: center; min-height: 400px; }
+.hero-text { width: 55%; padding: 50px; display: flex; flex-direction: column; justify-content: center; }
+.filter-nav { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 30px; justify-content: center; }
+.chip { background: white; border: 1px solid #ddd; padding: 12px 25px; border-radius: 50px; cursor: pointer; font-weight: bold; transition: 0.3s; color: #555; white-space: nowrap; flex-shrink: 0; }
+.chip:hover, .chip.active { background: var(--red); color: white; border-color: var(--red); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-bottom: 60px; }
+.card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #eee; display: flex; flex-direction: column; transition: 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.card.hidden { display: none; }
+.card-photo-wrap { height: 220px; overflow: hidden; position: relative; }
+.card-photo { width: 100%; height: 100%; object-fit: cover; }
+.card-body { padding: 30px; flex-grow: 1; }
+
+/* Events Page Dates */
+.date-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed #eee; font-size: 1.2rem; /* INCREASED */ }
+
+.content-block { background: white; padding: 50px; border-radius: 12px; border-left: 8px solid var(--red); box-shadow: 0 10px 40px rgba(0,0,0,0.05); margin-bottom: 40px; }
+.timeline-item { display: flex; gap: 20px; margin-bottom: 30px; }
+.year { font-weight: 900; color: var(--red); font-size: 1.2rem; min-width: 80px; }
+.milestone { background: #f9f9f9; padding: 20px; border-radius: 10px; width: 100%; border: 1px solid #eee; }
+
+/* =========================================
+   6. COMMON ELEMENTS & FOOTER
+   ========================================= */
+.btn-red { background: var(--red); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 20px rgba(230, 0, 0, 0.2); border: 2px solid var(--red); }
+.btn-red:hover { transform: translateY(-3px); background: transparent; color: var(--red); }
+footer { margin-top: 60px; text-align: center; background: #eee; padding: 40px; color: #777; font-size: 0.9rem; border-top: 1px solid #ddd; }
+#back-to-top { position: fixed; bottom: 30px; right: 30px; background: var(--red); color: white; border: none; padding: 0; width: 50px; height: 50px; font-size: 1.5rem; cursor: pointer; display: none; z-index: 9999; border-radius: 50%; box-shadow: 0 5px 15px rgba(0,0,0,0.3); align-items: center; justify-content: center; }
+#back-to-top:hover { transform: translateY(-5px); background: #222; }
+
+/* Mobile Overrides */
+@media (max-width: 900px) {
+    .header-inner { flex-direction: column; gap: 15px; }
+    .mobile-menu-btn { display: block; position: absolute; top: 20px; right: 20px; }
+    .main-nav { display: none; flex-direction: column; width: 100%; gap: 15px; padding-bottom: 15px; }
+    .main-nav.active { display: flex; }
+    .venue-hero h1 { font-size: 2.5rem; }
+    .venue-grid { grid-template-columns: 1fr; }
+    .hero-content h2 { font-size: 2.5rem; }
+    .scroll-controls { display: none; }
+    
+    /* Smooth Scroll Fix */
+    .venue-scroll-wrapper { 
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch; 
+        scrollbar-width: none; 
+    }
+    .venue-scroll-wrapper::-webkit-scrollbar { display: none; }
+
+    .video-section, .founder-section { grid-template-columns: 1fr; padding-left: 0; border-left: none; }
+    .slide { flex-direction: column; } 
+    .hero-img { width: 100%; min-height: 250px; height: 250px; }
+    .hero-text { width: 100%; padding: 30px 20px; }
+    .filter-nav { justify-content: flex-start; padding-left: 10px; }
+}
