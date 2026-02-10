@@ -1,3 +1,24 @@
+---
+title: "Let's Make Music & Dance at The Blue Market 2026"
+subtitle: "Live Music Acts & Salsa Dancing Sessions"
+hero_image: "images/letsmakemusidancing.jpeg"
+about_title: "About the Event"
+about_text: |
+  The Blue (Bermondsey) community is enriched by the wonderful events organized at the Blue Market place. We are pleased to be back with a <strong>song and dance event (SATURDAY 30th MAY 2026)</strong>.
+  <br><br>
+  This special annual event will include various music ensembles, community choir, brass band, vocal performances and Salsa dancing. Each year we will pay a posthumous tribute to the late great community hero Russell Dryden who sadly passed away in May 2024. Russell was a local champion who lived and breathed music and community enrichment at The Blue Market. <strong>Everyone is welcome to participate</strong> in the dance sessions.
+schedule_items:
+  - date: "Saturday 30th May 2026"
+    time: "1:00pm - 4:00pm"
+    details: "Paying tribute to the late and great Mr Russell Dryden"
+gallery_images:
+  - image: "images/letsmakemusic.jpeg"
+    alt: "Live Music Performance"
+  - image: "images/letsmakemusidancing.jpeg"
+    alt: "Dancing at The Blue Market"
+  - image: "images/letsmakemusidancing2.jpeg"
+    alt: "Salsa Dancing"
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +35,7 @@
             position: relative;
             height: 60vh;
             min-height: 400px;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('images/letsmakemusidancing.jpeg');
+            /* IMAGE EDITABLE REGION */
             background-size: cover;
             background-position: center;
             display: flex;
@@ -140,11 +161,14 @@
     </div>
 </header>
 
-<div class="venue-hero">
+<div class="venue-hero" 
+     style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('{{ page.hero_image }}');"
+     data-editable="image"
+     data-prop-src="hero_image">
     <div class="venue-hero-content">
         <span class="venue-tag">Free Entry</span>
-        <h1 class="editable">Let's Make Music & Dance<br>at The Blue Market 2026</h1>
-        <p style="font-size: 1.2rem; opacity: 0.9; margin-top:10px;" class="editable">Live Music Acts & Salsa Dancing Sessions</p>
+        <h1 data-editable="text" data-prop="title">{{ page.title }}</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9; margin-top:10px;" data-editable="text" data-prop="subtitle">{{ page.subtitle }}</p>
     </div>
 </div>
 
@@ -155,33 +179,38 @@
     <div class="venue-grid">
         
         <div>
-            <h2 style="margin-top:0; font-size: 2rem; color:var(--dark);">About the Event</h2>
+            <h2 style="margin-top:0; font-size: 2rem; color:var(--dark);" data-editable="text" data-prop="about_title">{{ page.about_title }}</h2>
             
-            <div class="editable">
-                <p style="font-size:1.1rem; line-height:1.6; color:#444;">
-                    The Blue (Bermondsey) community is enriched by the wonderful events organized at the Blue Market place. We are pleased to be back with a <strong>song and dance event (SATURDAY 30th MAY 2026) </strong>.
-                </p>
-                <p style="font-size:1.1rem; line-height:1.6; color:#444;">
-                    This special annual event will include various music ensembles, community choir, brass band, vocal performances and Salsa dancing. Each year we will pay a posthumous tribute to the late great community hero Russell Dryden who sadly passed away in May 2024. Russell was a local champion who lived and breathed music and community enrichment at The Blue Market . <strong>Everyone is welcome to participate</strong> in the dance sessions.
-                </p>
+            <div data-editable="text" data-prop="about_text">
+                {{ page.about_text }}
             </div>
 
             <h3 style="margin-top: 40px; margin-bottom: 20px; color: var(--red); font-size:1.5rem; text-transform:uppercase;">2026 Schedule</h3>
             
-            <div class="date-card">
-                <div class="editable" style="width:100%;">
-                    <div class="date-day">Saturday 30th May 2026</div>
-                    <div class="date-time">1:00pm - 4:00pm</div>
-                    <div class="date-mes">Paying tribute to the late and great Mr Russell Dryden</div>
+            <div data-editable="array" data-prop="schedule_items">
+                {% for item in page.schedule_items %}
+                <div class="date-card" data-editable="array-item">
+                    <div>
+                        <div class="date-day">{{ item.date }}</div>
+                        <div class="date-time">{{ item.time }}</div>
+                        <div class="date-mes">{{ item.details }}</div>
+                    </div>
+                    <a href="#" class="btn-red" style="padding: 8px 20px; font-size: 0.8rem; margin:0;">Add to Cal</a>
                 </div>
-                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=The+Blue+Market+Music+and+Dance&location=The+Blue+Market+Bermondsey+London" target="_blank" class="btn-red" style="padding: 8px 20px; font-size: 0.8rem; margin:0;">Add to Cal</a>
+                {% endfor %}
             </div>
 
             <h3 style="margin-top: 60px; margin-bottom: 20px; color: var(--dark); font-size:1.5rem;">Memories from The Blue Market</h3>
-            <div class="gallery-grid">
-                <img src="images/letsmakemusic.jpeg" class="gallery-img editable" alt="Live Music Performance">
-                <img src="images/letsmakemusidancing.jpeg" class="gallery-img editable" alt="Dancing at The Blue Market">
-                <img src="images/letsmakemusidancing2.jpeg" class="gallery-img editable" alt="Salsa Dancing">
+            
+            <div class="gallery-grid" data-editable="array" data-prop="gallery_images">
+                {% for item in page.gallery_images %}
+                <img src="{{ item.image }}" 
+                     class="gallery-img" 
+                     alt="{{ item.alt }}" 
+                     data-editable="image" 
+                     data-prop-src="image"
+                     data-prop-alt="alt">
+                {% endfor %}
             </div>
 
         </div>
