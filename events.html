@@ -4,41 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMAT | 2026 Events Schedule</title>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* SCROLL FIX: Changed min-width to 280px so it fits on small phones */
-        .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:20px; margin-bottom:60px; justify-content:center; }
-        
-        /* Mobile optimization */
-        @media(max-width:600px){ 
-            .grid { grid-template-columns: 1fr; padding: 0 10px; } 
-            .container { padding: 0 10px; }
-        }
+        .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:30px; margin-bottom:60px; justify-content:center; }
+        @media(max-width:600px){ .grid{ grid-template-columns:1fr; } }
         
         .event-card { background:#fff; border-radius:12px; overflow:hidden; border:1px solid #eee; transition:0.3s; display:flex; flex-direction:column; height:100%; }
         .event-card:hover { transform:translateY(-8px); box-shadow:0 15px 35px rgba(0,0,0,0.1); }
         
-        .card-photo-wrap { height:200px; overflow:hidden; }
+        .card-photo-wrap { height:220px; overflow:hidden; }
         .card-photo { width:100%; height:100%; object-fit:cover; transition:0.5s; }
         .event-card:hover .card-photo { transform:scale(1.05); }
         
-        .card-body { padding:20px; flex-grow:1; display:flex; flex-direction:column; }
+        .card-body { padding:25px; flex-grow:1; display:flex; flex-direction:column; }
         
         .search-input { width:100%; padding:15px 25px; border-radius:50px; border:1px solid #ddd; outline:none; transition:0.3s; box-shadow:0 4px 10px rgba(0,0,0,0.05); box-sizing:border-box; margin-bottom:30px; }
         .search-input:focus { border-color:var(--red); }
         
-        /* Scrollable Filter Chips */
-        .filter-nav { display:flex; gap:10px; overflow-x:auto; padding-bottom:15px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-        .filter-nav::-webkit-scrollbar { display: none; }
+        /* UPDATED FILTER STYLES */
+        .filter-nav { display:flex; gap:10px; overflow-x:auto; padding-bottom:25px; justify-content:center; flex-wrap:wrap; }
         
-        .date-row { display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px dashed #eee; font-size:0.95rem; }
+        /* DATE STYLES */
+        .date-row { display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px dashed #eee; font-size:1rem; }
         .date-past { opacity:0.4; text-decoration:line-through; }
         .date-next { color:var(--red); font-weight:800; background:#fff5f5; border-radius:4px; padding:0 5px; }
-        .cal-btn { text-decoration:none; opacity:0.6; cursor:pointer; font-size: 1.1rem; } 
-        .chip { white-space: nowrap; padding: 8px 16px; border-radius: 20px; border: 1px solid #eee; background: white; cursor: pointer; }
-        .chip.active { background: var(--red); color: white; border-color: var(--red); }
+        .cal-btn { text-decoration:none; opacity:0.6; cursor:pointer; font-size: 1.1rem; } .cal-btn:hover { opacity:1; transform:scale(1.2); }
+        .chip { white-space: nowrap; }
     </style>
 </head>
 <body>
@@ -50,15 +42,16 @@
             <a href="index.html" class="nav-link">Home</a>
             <a href="events.html" class="nav-link active">Events</a>
             <a href="about.html" class="nav-link">About</a>
-            <a href="https://www.justgiving.com/crowdfunding/umatcommunity" class="nav-donate">Donate</a>
+            <a href="/donate" class="nav-donate">Donate</a>
         </nav>
     </div>
 </header>
 
 <div class="container">
-    <h1 style="text-align:center; margin-top:40px; color:var(--red);" data-editable="text">2026 CALENDAR</h1>
+    <h1 style="text-align:center; margin-top:40px; color:var(--red);" data-editable="source" data-path="events.html" data-key="main_title">2026 CALENDAR</h1>
+    <div class="slider-wrap"><div class="slides-inner" id="slides-inner"></div></div>
     
-    <input type="text" id="search-input" class="search-input" placeholder="Search events by venue or date...">
+    <input type="text" id="search-input" class="search-input" placeholder="Search events...">
     
     <div class="filter-nav">
         <button class="chip active" onclick="filter('all', this)">All Venues</button>
@@ -72,15 +65,15 @@
     
     <div class="grid" id="card-grid"></div>
 </div>
-<footer><p>© 2026 Unity Music Arts Team CIC</p></footer>
+<footer><p data-editable="source" data-path="events.html" data-key="footer_text">© 2026 Unity Music Arts Team CIC</p></footer>
 
 <script>
-    /* To edit these events, you must edit this script file directly 
-       or use the individual venue pages which are now visual-editable.
-    */
     const events = [
         { 
-            loc:'bermondsey', title:'Bermondsey Sq Jazz', brief:'The popular monthly jazz days return to the square.', 
+            // LOCATION ID: bermondsey
+            loc:'bermondsey', 
+            title:'Bermondsey Sq Jazz', 
+            brief:'The popular monthly jazz days return to the square. Free to attend.', 
             img:'images/322110607_569423415027414_3783644028259934961_n.jpg', link:'bermondsey.html', addr:'Bermondsey Square, London SE1 3UN',
             sched:[ 
                 {t:'3rd May', h:'2pm-5pm', s:'20260503T1400', e:'20260503T1700'}, 
@@ -91,27 +84,60 @@
             ] 
         },
         { 
-            loc:'birdinhand', title:'Bird in Hand', brief:'Monthly Jazz & Jam session hosted by Stephen Pierre.', 
+            // LOCATION ID: birdinhand
+            loc:'birdinhand', 
+            title:'Bird in Hand', 
+            brief:'Monthly Jazz & Jam session hosted by Stephen Pierre. Feat. Tristan Sutton.', 
             img:'images/jazzjamcicrusBAND3.jpg', link:'bird-in-hand.html', addr:'35 Dartmouth Rd, London SE23 3HN',
             sched:[ 
+                {t:'25th Jan', h:'4pm-7pm', s:'20260125T1600', e:'20260125T1900'}, 
                 {t:'22nd Feb', h:'4pm-7pm', s:'20260222T1600', e:'20260222T1900'}, 
                 {t:'29th Mar', h:'4pm-7pm', s:'20260329T1600', e:'20260329T1900'}, 
-                {t:'26th Apr', h:'4pm-7pm', s:'20260426T1600', e:'20260426T1900'}, 
+                {t:'26th Apr', h:'4pm-7pm', s:'20260126T1600', e:'20260426T1900'}, 
                 {t:'31st May', h:'4pm-7pm', s:'20260531T1600', e:'20260531T1900'}, 
                 {t:'28th Jun', h:'4pm-7pm', s:'20260628T1600', e:'20260628T1900'}, 
                 {t:'26th Jul', h:'4pm-7pm', s:'20260726T1600', e:'20260726T1900'} 
             ] 
         },
-        { loc:'southwark', title:'Southwark Bandstand', brief:'Free public event supporting (CRY).', img:'images/he-Band-Stand.jpg', link:'southwark.html', addr:'Southwark Park, London SE16 2TX', sched:[{t:'28th June', h:'2pm-4pm', s:'20260628T1400', e:'20260628T1600'}] },
-        { loc:'palmtree', title:'The Palm Tree', brief:'Outdoor jazz and salsa in Mile End Park.', img:'images/333-1.jpg', link:'palm-tree.html', addr:'127 Grove Rd, London E3 5BH', sched:[{t:'14th June', h:'2pm-6pm', s:'20260614T1400', e:'20260614T1800'}, {t:'16th Aug', h:'2pm-6pm', s:'20260816T1400', e:'20260816T1800'}] },
-        { loc:'bluemarket', title:'Blue Market', brief:'Community music and salsa dancing.', img:'images/111.jpg', link:'blue-market.html', addr:'Market Place, London SE16 3UQ', sched:[{t:'30th May', h:'12pm-4pm', s:'20260530T1200', e:'20260530T1600'}] },
-        { loc:'stjohns', title:'St Johns Waterloo', brief:'A celebration of jazz, blues & grooves.', img:'images/StJohnsGardenBand2.jpeg', link:'st-johns.html', addr:'Waterloo Rd, London SE1 8TY', sched:[{t:'12th July', h:'2pm-5pm', s:'20260712T1400', e:'20260712T1700'}] }
+        { 
+            // LOCATION ID: southwark
+            loc:'southwark', 
+            title:'Southwark Bandstand', 
+            brief:'Free public event supporting (CRY) Cardiac Risk In The Young.', 
+            img:'images/he-Band-Stand.jpg', link:'southwark.html', addr:'Southwark Park, London SE16 2TX', 
+            sched:[{t:'28th June', h:'2pm-4pm', s:'20260628T1400', e:'20260628T1600'}] 
+        },
+        { 
+            // LOCATION ID: palmtree
+            loc:'palmtree', 
+            title:'The Palm Tree', 
+            brief:'Outdoor jazz and salsa in the heart of Mile End Park.', 
+            img:'images/333-1.jpg', link:'palm-tree.html', addr:'127 Grove Rd, London E3 5BH', 
+            sched:[{t:'14th June', h:'2pm-6pm', s:'20260614T1400', e:'20260614T1800'}, {t:'16th Aug', h:'2pm-6pm', s:'20260816T1400', e:'20260816T1800'}] 
+        },
+        { 
+            // LOCATION ID: bluemarket
+            loc:'bluemarket', 
+            title:'Blue Market', 
+            brief:'Community celebration with live music and salsa dancing.', 
+            img:'images/111.jpg', link:'blue-market.html', addr:'Market Place, London SE16 3UQ', 
+            sched:[{t:'30th May', h:'12pm-4pm', s:'20260530T1200', e:'20260530T1600'}] 
+        },
+        { 
+            // LOCATION ID: stjohns
+            loc:'stjohns', 
+            title:'St Johns Waterloo', 
+            brief:'A celebration of jazz, blues & grooves where UMAT began.', 
+            img:'images/StJohnsGardenBand2.jpeg', link:'st-johns.html', addr:'Waterloo Rd, London SE1 8TY', 
+            sched:[{t:'12th July', h:'2pm-5pm', s:'20260712T1400', e:'20260712T1700'}] 
+        }
     ];
 
     function render(list) {
         const grid = document.getElementById('card-grid'); 
         grid.innerHTML = '';
         if(!list.length) return grid.innerHTML = `<div style="text-align:center; width:100%;"><h3>No events found.</h3></div>`;
+        
         const today = new Date().toISOString().slice(0,10).replace(/-/g,'');
 
         list.forEach(e => {
@@ -123,6 +149,7 @@
                 if(isPast) cls += ' date-past';
                 else if(!foundNext) { cls += ' date-next'; foundNext = true; }
                 
+                // Using d.h (Manual Hours) for display
                 html += `
                 <div class="${cls}">
                     <span>${d.t}</span>
@@ -140,18 +167,35 @@
                     <h3 style="margin:0;"><a href="${e.link}" style="color:inherit;text-decoration:none;">${e.title}</a></h3>
                     <div style="margin:15px 0;">${html}</div>
                     <p style="font-size:0.9rem; color:#666; margin-top:auto;">${e.brief}</p>
-                    <a href="${e.link}" class="btn-red" style="text-align:center; margin-top:15px;">View Details →</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(e.addr)}" target="_blank" class="btn-red" style="text-align:center; margin-top:15px;">📍 Directions</a>
                 </div>
             </div>`;
         });
     }
     
+    const slider = document.getElementById('slides-inner');
+    events.forEach(e => {
+        slider.innerHTML += `
+        <div class="slide">
+            <div class="hero-img" style="background-image:url('${e.img}');"></div>
+            <div class="hero-text">
+                <span style="color:var(--red); font-weight:bold; letter-spacing:1px;">FEATURED EVENT</span>
+                <h2 style="font-size: 2.2rem; margin: 10px 0;">${e.title}</h2>
+                <p style="margin-bottom: 25px; opacity: 0.9;">${e.brief}</p>
+                <a href="${e.link}" class="btn-red" style="width:fit-content; border:2px solid white; padding: 10px 20px; font-size: 0.9rem;">View Details</a>
+            </div>
+        </div>`;
+    });
+    let idx = 0; setInterval(() => slider.style.transform = `translateX(-${(idx = (idx+1)%events.length) * 100}%)`, 5000);
+
     document.getElementById('search-input').addEventListener('input', e => render(events.filter(x => (x.title+x.brief+x.loc).toLowerCase().includes(e.target.value.toLowerCase()))));
+    
     function filter(l,b){ 
         document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active')); 
         b.classList.add('active'); 
         render(l==='all'?events:events.filter(x=>x.loc===l)); 
     }
+    
     render(events);
 </script>
 </body>
