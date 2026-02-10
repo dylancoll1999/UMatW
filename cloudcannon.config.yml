@@ -1,10 +1,4 @@
 # cloudcannon.config.yml
-
-# 1. Where images go
-paths:
-  uploads: images
-
-# 2. Tell CloudCannon your HTML files are "Pages" (THIS FIXES YOUR ERROR)
 collections_config:
   pages:
     path: .
@@ -12,7 +6,19 @@ collections_config:
     url: "/[path]"
     output: true
 
-# 3. Editor Settings (Date pickers, Image resizers)
+paths:
+  uploads: images
+
+# This setting helps when you can't click text because of overlays
+editor:
+  default_path: /index.html
+  preview_wrapper_class: editable
+  entity_classes:
+    editable:
+      allow_resize: false
+      allow_add: true
+      allow_remove: true
+
 _inputs:
   date:
     type: date
@@ -23,12 +29,3 @@ _inputs:
       width: 800
       height: 600
       fit: cover
-
-# 4. Visual Editor "Drag & Drop" Settings
-editor:
-  default_path: /index.html
-  entity_classes:
-    editable:
-      allow_resize: false
-      allow_add: true
-      allow_remove: true
