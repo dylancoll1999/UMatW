@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bermondsey Square Jazz | UMAT</title>
+    <meta name="description" content="Free open-air jazz in Bermondsey Square. Join us the first Sunday of summer months for live music, food, and community.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Page Specific Styles */
+        .venue-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('images/BS2021.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            color: white;
+            margin-bottom: 40px;
+        }
+        .venue-hero-content {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .venue-hero h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            text-transform: uppercase;
+            line-height: 1;
+        }
+        .venue-tag {
+            background: #28a745;
+            color: white;
+            padding: 5px 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* Layout Grid */
+        .venue-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        /* Dates List */
+        .date-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            border: 1px solid #eee;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .date-card:hover {
+            border-color: var(--red);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .date-day { font-size: 1.2rem; font-weight: bold; color: #1a1a1a; }
+        .date-time { color: #666; }
+
+        /* Sidebar info */
+        .info-box {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid var(--red);
+        }
+        .info-item { margin-bottom: 20px; }
+        .info-label { font-weight: bold; display: block; color: #1a1a1a; margin-bottom: 5px; }
+        /* Clickable links style */
+        .info-link { color: #555; text-decoration: underline; transition: 0.2s; }
+        .info-link:hover { color: var(--red); }
+
+        .map-frame {
+            width: 100%;
+            height: 250px;
+            border: 0;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .gallery-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .gallery-img:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        @media (max-width: 768px) {
+            .venue-hero h1 { font-size: 2.5rem; }
+            .venue-grid { grid-template-columns: 1fr; }
+            .date-card { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .date-card .btn-red { width: 100%; text-align: center; box-sizing: border-box; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="index.html">
+            <img src="images/UMAT-e1673627924885.png" alt="UMAT Logo" class="logo-img">
+        </a>
+        <button class="mobile-menu-btn" onclick="document.querySelector('.main-nav').classList.toggle('active')">☰</button>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="events.html" class="nav-link">Events</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="https://www.justgiving.com/crowdfunding/umatcommunity" class="nav-donate">Donate</a>
+        </nav>
+    </div>
+</header>
+
+<div class="venue-hero">
+    <div class="venue-hero-content">
+        <span class="venue-tag">Free Entry</span>
+        <h1>Bermondsey Square<br>Jazz Days 2026</h1>
+       <H1> <p style="font-size: 1.2rem; opacity: 0.9; margin-top:10px;">FIRST Sunday of each month (MAY - SEPT) 2pm - 5pm</p> </H1>
+    </div>
+</div>
+
+<div class="container">
+    
+    <a href="index.html" style="display:inline-block; margin-bottom: 30px; color:#666; font-weight:bold; text-decoration:none;">← Back to Home</a>
+
+    <div class="venue-grid">
+        
+        <div>
+            <h2 style="margin-top:0; font-size: 2rem; color:var(--dark);">About the Event</h2>
+            
+            <p style="font-size:1.1rem; line-height:1.6; color:#444;">
+                Located in the heart of one of London’s most vibrant districts, <strong>Bermondsey Square</strong> hosts our popular monthly open-air jazz sessions. Surrounded by independent cafes, restaurants, and the famous antiques market, it is the perfect spot to spend a relaxing Sunday afternoon.
+            </p>
+
+            <p style="font-size:1.1rem; line-height:1.6; color:#444;">
+                We are pleased to announce the ever popular jazz days will return on the <strong>FIRST SUNDAY</strong> of each month between 2pm – 5pm. Each event is <strong>free to attend</strong> and will welcome a different collective of musicians invited by the organiser, host and vocalist <strong>Stephen Pierre</strong> 
+				</p>
+				♿ Accessible toilets - Event seating
+            </p>
+
+
+            <h3 style="margin-top: 40px; margin-bottom: 20px; color: var(--red); font-size:1.5rem; text-transform:uppercase;">2026 Schedule</h3>
+            
+            <div class="date-card">
+                <div>
+                    <div class="date-day">Sunday 3rd May</div>
+                    <div class="date-time">2:00pm - 5:00pm</div>
+                </div>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Bermondsey+Square+Jazz&location=Bermondsey+Square+London" target="_blank" class="btn-red" style="padding: 8px 20px; font-size: 0.8rem; margin:0;">Add to Cal</a>
+            </div>
+
+            <div class="date-card" style="border-left: 5px solid var(--red);">
+                <div>
+                    <div class="date-day">Sunday 7th June</div>
+                    <div class="date-time">2:00pm - 6:00pm <br><span style="color:var(--red); font-weight:bold; font-size:0.9rem;">🏳️‍🌈Supporting Pride In Southwark;    Jazz Band, Salsa Dancing, Inclusive Community Choir</span></div>
+                </div>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Bermondsey+Square+Jazz+Pride+Special&location=Bermondsey+Square+London" target="_blank" class="btn-red" style="padding: 8px 20px; font-size: 0.8rem; margin:0;">Add to Cal</a>
+            </div>
+
+            <div class="date-card">
+                <div>
+                    <div class="date-day">Sunday 5th July</div>
+                    <div class="date-time">2:00pm - 5:00pm</div>
+                </div>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Bermondsey+Square+Jazz&location=Bermondsey+Square+London" target="_blank" class="btn-red" style="padding: 8px 20px; font-size: 0.8rem; margin:0;">Add to Cal</a>
+            </div>
+
+            <div class="date-card">
+                <div>
+                    <div class="date-day">Sunday 2nd August</div>
+                    <div class="date-time">2:00pm - 5:00pm</div>
+                </div>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Bermondsey+Square+Jazz&location=Bermondsey+Square+London" target="_blank" class="btn-red" style="padding: 8px 20px; font-size: 0.8rem; margin:0;">Add to Cal</a>
+            </div>    
+			<div class="date-card">
+                <div>
+                    <div class="date-day">Sunday 6th September</div>
+                    <div class="date-time">2:00pm - 5:00pm</div>
+                </div>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Bermondsey+Square+Jazz&location=Bermondsey+Square+London" target="_blank" class="btn-red" style="padding: 8px 20px; font-size: 0.8rem; margin:0;">Add to Cal</a>
+            </div>
+
+            <h3 style="margin-top: 60px; margin-bottom: 20px; color: var(--dark); font-size:1.5rem;">Memories from the Square</h3>
+            <div class="gallery-grid">
+                <img src="images/BS2021.jpeg" class="gallery-img" alt="Bermondsey Crowd 2021">
+                <img src="images/11.jpg" class="gallery-img" alt="Dancing in the Square">
+                <img src="images/BS2.jpeg" class="gallery-img" alt="Live Band">
+                <div style="background:#eee; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#888; font-size:0.8rem; height:150px;">
+                    More memories coming soon...
+                </div>
+            </div>
+
+        </div>
+
+        <aside>
+            <div class="info-box">
+                <div class="info-item">
+                    <span class="info-label">📍 Address</span>
+                    <p style="margin:0;">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Bermondsey+Square+London+SE1+3UN" target="_blank" class="info-link">
+                            Bermondsey Square<br>London, SE1 3UN
+                        </a>
+                    </p>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-label">🚇 Nearest Transport</span>
+                    <p style="margin:0;">
+                        <a href="https://www.google.com/maps/search/?api=1&query=London+Bridge+Station" target="_blank" class="info-link">London Bridge</a> (10 min walk)<br>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Bermondsey+Station" target="_blank" class="info-link">Bermondsey</a> (12 min walk)
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">♿ Accessibility</span>
+                    <p class="info-text">Level access. Accessible toilets available in local businesses.</p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">🌦️ Weather Policy</span>
+                    <p class="info-text">Events are outdoors. In case of heavy rain, check our Facebook page.</p>
+                </div>
+
+                <a href="https://goo.gl/maps/xyz" target="_blank" class="btn-red" style="width:100%; text-align:center; box-sizing:border-box;">Get Directions</a>
+
+                <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.923769733159!2d-0.08149268407536357!3d51.49626331934372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876035ec6a2569f%3A0x6739922262960699!2sBermondsey%20Square!5e0!3m2!1sen!2suk!4v1673880000000!5m2!1sen!2suk" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </aside>
+
+    </div>
+</div>
+
+<div class="bg-light" style="padding: 60px 0; text-align:center;">
+    <div class="container">
+        <h3>Keeping these events free!</h3>
+        <p style="max-width:600px; margin: 0 auto 30px; color:#555;">The Bermondsey Square Jazz Days are supported by your kind donations to help cover production costs.</p>
+        <a href="https://www.justgiving.com/crowdfunding/umatcommunity" class="btn-red"> Thank You For Your kind Support	</a>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Unity Music Arts Team CIC registration 12987857</p>
+</footer>
+
+</body>
+</html>

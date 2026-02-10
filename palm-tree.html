@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Palm Tree Outdoor Jazz | UMAT</title>
+    <meta name="description" content="Free outdoor jazz and salsa at The Palm Tree, Mile End Park. Join us for live music, jam sessions, and dancing hosted by Stephen Pierre.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Page Specific Styles */
+        .venue-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('images/Palmoutside.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            color: white;
+            margin-bottom: 40px;
+        }
+        .venue-hero-content {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .venue-hero h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            text-transform: uppercase;
+            line-height: 1;
+        }
+        .venue-tag {
+            background: #28a745;
+            color: white;
+            padding: 5px 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* Layout Grid */
+        .venue-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        /* Dates List */
+        .date-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            border: 1px solid #eee;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .date-card:hover {
+            border-color: var(--red);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .date-day { font-size: 1.2rem; font-weight: bold; color: #1a1a1a; }
+        .date-time { color: #666; }
+
+        /* Sidebar info */
+        .info-box {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid var(--red);
+        }
+        .info-item { margin-bottom: 20px; }
+        .info-label { font-weight: bold; display: block; color: #1a1a1a; margin-bottom: 5px; }
+        /* Clickable Links */
+        .info-link { color: #555; text-decoration: underline; transition: 0.2s; }
+        .info-link:hover { color: var(--red); }
+        .info-text { color: #555; margin: 0; }
+
+        .map-frame {
+            width: 100%;
+            height: 250px;
+            border: 0;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .gallery-img:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        @media (max-width: 768px) {
+            .venue-hero h1 { font-size: 2.5rem; }
+            .venue-grid { grid-template-columns: 1fr; }
+            .date-card { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .date-card .btn-red { width: 100%; text-align: center; box-sizing: border-box; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="index.html">
+            <img src="images/UMAT-e1673627924885.png" alt="UMAT Logo" class="logo-img">
+        </a>
+        <button class="mobile-menu-btn" onclick="document.querySelector('.main-nav').classList.toggle('active')">☰</button>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="events.html" class="nav-link">Events</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="https://www.justgiving.com/crowdfunding/umatcommunity" class="nav-donate">Donate</a>
+        </nav>
+    </div>
+</header>
+
+<div class="venue-hero">
+    <div class="venue-hero-content">
+        <span class="venue-tag">Free Entry</span>
+        <h1>The Palm Tree<br>Outdoor Jazz Days 2026</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9; margin-top:10px;">Live Jazz & Salsa in Mile End Park</p>
+        <p style="font-size: 1.2rem; opacity: 0.9; margin-top:10px;">14th June 16th August 2pm - 6pm </p>
+    </div>
+</div>
+
+<div class="container">
+    
+    <a href="index.html" style="display:inline-block; margin-bottom: 30px; color:#666; font-weight:bold; text-decoration:none;">← Back to Home</a>
+
+    <div class="venue-grid">
+        
+        <div>
+            <h2 style="margin-top:0; font-size: 2rem; color:var(--dark);">About the Event</h2>
+            
+            <p style="font-size:1.1rem; line-height:1.6; color:#444;">
+
+                We are delighted to announce the return of the outdoor jazz days to the renowned <strong>The Palm Tree pub forecourt </strong> located in East London's Mile End Park. The pub has been a stalwart of the jazz and swing music scene since 1977.
+            </p>
+            <p style="font-size:1.1rem; line-height:1.6; color:#444;">
+                The outdoor jazz days are a fantastic blend of <strong>live jazz and salsa dance sessions</strong> . The salsa dance slots are hostsed by Sean Vickery from Salsa Oracle alternating in between the live jazz band sets. Each event will feature a live jazz band session featuring the host,organiser and vocalsit Stephen Pierre, providing a platform for many of London's fine music students and graduates to showcase their talents.
+            </p>
+
+            <h3 style="margin-top: 40px; margin-bottom: 20px; color: var(--red); font-size:1.5rem; text-transform:uppercase;">2026 Schedule</h3>
+            
+            <div class="date-card">
+                <div>
+                    <div class="date-day">Sunday 14th June 2026</div>
+                    <div class="date-time">2:00pm - 6:00pm</div>
+                </div>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=The+Palm+Tree+Outdoor+Jazz&location=The+Palm+Tree+Mile+End+Park+London" target="_blank" class="btn-red" style="padding: 8px 20px; font-size: 0.8rem; margin:0;">Add to Cal</a>
+            </div>
+
+            <div class="date-card">
+                <div>
+                    <div class="date-day">Sunday 16th August 2026</div>
+                    <div class="date-time">2:00pm - 6:00pm</div>
+                </div>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=The+Palm+Tree+Outdoor+Jazz&location=The+Palm+Tree+Mile+End+Park+London" target="_blank" class="btn-red" style="padding: 8px 20px; font-size: 0.8rem; margin:0;">Add to Cal</a>
+            </div>
+
+            <h3 style="margin-top: 60px; margin-bottom: 20px; color: var(--dark); font-size:1.5rem;">Memories from The Palm Tree</h3>
+            <div class="gallery-grid">
+                <img src="images/Palmoutsideband.jpg" class="gallery-img" alt="Live Band at The Palm Tree">
+                <img src="images/Palmoutside2.jpg" class="gallery-img" alt="Singer at The Palm Tree">
+                <img src="images/Palmoutside.jpg" class="gallery-img" alt="Crowd at The Palm Tree">
+            </div>
+
+        </div>
+
+        <aside>
+            <div class="info-box">
+                <div class="info-item">
+                    <span class="info-label">📍 Address</span>
+                    <p style="margin:0;">
+                        <a href="https://www.google.com/maps/search/?api=1&query=The+Palm+Tree+Mile+End+Park" target="_blank" class="info-link">
+                            The Palm Tree<br>
+                            127 Grove Rd, London E3 5BH
+                        </a>
+                    </p>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-label">🚇 Nearest Transport</span>
+                    <p style="margin:0;">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Mile+End+Station" target="_blank" class="info-link">Mile End</a> (Central/District)<br>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Bethnal+Green+Station" target="_blank" class="info-link">Bethnal Green</a> (Central)
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">♿ Accessibility & Equality</span>
+                    <p class="info-text">These free outdoor events proudly include a disability access toilet and event seating to support equality and inclusiveness.</p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">🌦️ Weather Policy</span>
+                    <p class="info-text">Events are outdoors. In case of heavy rain, updates will be posted on our Facebook page.</p>
+                </div>
+
+                <a href="https://www.google.com/maps/dir/?api=1&destination=The+Palm+Tree+Mile+End+Park" target="_blank" class="btn-red" style="width:100%; text-align:center; box-sizing:border-box;">Get Directions</a>
+
+                <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.389931326456!2d-0.04286368422940254!3d51.52918477963864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761d8e0cd83337%3A0x3bc115c5064eac3b!2sThe%20Palm%20Tree!5e0!3m2!1sen!2suk!4v1675354123456!5m2!1sen!2suk" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </aside>
+
+    </div>
+</div>
+
+<div class="bg-light" style="padding: 60px 0; text-align:center;">
+    <div class="container">
+        <h3>Support Local Jazz</h3>
+        <p style="max-width:600px; margin: 0 auto 30px; color:#555;">UMAT events rely on public donations to pay the musicians and keep these community gatherings free.</p>
+        <a href="https://www.justgiving.com/crowdfunding/umatcommunity" class="btn-red">Make a Donation</a>
+    </div>
+</div>
+
+<footer>
+   <p>© 2026 Unity Music Arts Team CIC registration 12987857</p>
+</p>
+</footer>
+
+</body>
+</html>
