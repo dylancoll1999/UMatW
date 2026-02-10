@@ -1,31 +1,59 @@
-# cloudcannon.config.yml
-collections_config:
-  pages:
-    path: .
-    glob: ["*.html"]
-    url: "/[path]"
-    output: true
+---
+page_title: UMAT | Unity Music Arts Team
 
-paths:
-  uploads: images
+logo_image: images/UMAT-e1673627924885.png
+logo_alt: UMAT Logo
 
-# This setting helps when you can't click text because of overlays
-editor:
-  default_path: /index.html
-  preview_wrapper_class: editable
-  entity_classes:
-    editable:
-      allow_resize: false
-      allow_add: true
-      allow_remove: true
+menu_home: Home
+menu_events: Events
+menu_about: About
+menu_donate: Donate
 
-_inputs:
-  date:
-    type: date
-    instance_value: now
-  image:
-    type: image
-    options:
-      width: 800
-      height: 600
-      fit: cover
+next_event_badge: Next G: Loading...
+
+hero_heading: WE ARE UMAT
+hero_subheading: Grassroots community events supporting London's finest student and graduate musicians.
+hero_button_text: View 2026 Schedule
+
+awards:
+  - text: 🏆 Mayor of London Culture Award Nominee
+  - text: ⭐ Southwark Business Excellence Award
+  - text: 💡 London Festival of Ideas
+
+partners_heading: Supported By
+partners_text: BERMONDSEY COMMUNITY SQUARE FUND • SOUTHWARK COUNCIL • THE BLUE BERMONDSEY BID
+
+venues_heading: Upcoming Venues
+
+mission_image: images/5.jpg
+mission_image_alt: Stephen Pierre
+mission_heading: OUR MISSION
+mission_paragraph: We are a grassroots community music company (CIC) based in London. Our primary objective is to showcase and support the talents of both aspiring and seasoned musicians.
+mission_link_text: Read Our Story →
+
+video_heading: EXPERIENCE THE SOUND
+video_description: Watch highlights from our sessions featuring some of London's brightest new jazz talent.
+video_button_text: View Schedule
+
+highlight_cards:
+  - title: Summer Opener
+    date: June 2025
+    image: images/69815254_2558772900812001_2079160837263589376_n.jpg
+  - title: Bandstand Jazz
+    date: June 2024
+    image: images/he-Band-Stand.jpg
+  # add more here later in editor
+
+stat1_label: Musicians Supported
+stat2_label: Free Entry Events
+stat3_label: Years of Jazz
+stat4_label: Audience Members
+
+donate_heading: Help Local Musicians
+donate_subtext: We are 80% of the way to our goal! Join 270 supporters.
+raised_text: £3,217 Raised
+goal_text: £4,000 Goal
+donate_button: Donate Now
+
+footer_copyright: © 2026 Unity Music Arts Team CIC registration 12987857
+---
