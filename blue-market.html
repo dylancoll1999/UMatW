@@ -4,13 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Blue Market Bermondsey | UMAT</title>
-    <meta name="description" content="Free live music and salsa dancing at The Blue Market Bermondsey. Join us for community choirs, brass bands, and dance sessions.">
-    
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    
     <style>
         /* Page Specific Styles */
         .venue-hero {
@@ -23,8 +19,9 @@
             color: white;
             margin-bottom: 40px;
         }
-        /* Editable Hero Image Styling */
-        .hero-bg-img {
+        
+        /* New: Image tag acts as background so it can be edited */
+        .hero-bg-image {
             position: absolute;
             top: 0;
             left: 0;
@@ -33,6 +30,8 @@
             object-fit: cover;
             z-index: 0;
         }
+        
+        /* Dark overlay to make text readable */
         .hero-overlay {
             position: absolute;
             top: 0;
@@ -43,9 +42,10 @@
             z-index: 1;
             pointer-events: none;
         }
+
         .venue-hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 2; /* Sits on top of image */
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
@@ -107,8 +107,6 @@
         }
         .info-item { margin-bottom: 20px; }
         .info-label { font-weight: bold; display: block; color: #1a1a1a; margin-bottom: 5px; }
-        
-        /* Clickable Links */
         .info-link { color: #555; text-decoration: underline; transition: 0.2s; }
         .info-link:hover { color: var(--red); }
         .info-text { color: #555; margin: 0; }
@@ -164,15 +162,13 @@
 </header>
 
 <div class="venue-hero">
-    <img src="images/letsmakemusidancing.jpeg" class="hero-bg-img editable" alt="Hero Background">
+    <img src="images/letsmakemusidancing.jpeg" class="hero-bg-image editable" alt="Hero Background">
     <div class="hero-overlay"></div>
     
     <div class="venue-hero-content">
         <span class="venue-tag">Free Entry</span>
-        <div class="editable">
-            <h1>Let's Make Music & Dance<br>at The Blue Market 2026</h1>
-            <p style="font-size: 1.2rem; opacity: 0.9; margin-top:10px;">Live Music Acts & Salsa Dancing Sessions</p>
-        </div>
+        <h1 class="editable">Let's Make Music & Dance<br>at The Blue Market 2026</h1>
+        <p class="editable" style="font-size: 1.2rem; opacity: 0.9; margin-top:10px;">Live Music Acts & Salsa Dancing Sessions</p>
     </div>
 </div>
 
@@ -196,19 +192,16 @@
 
             <h3 style="margin-top: 40px; margin-bottom: 20px; color: var(--red); font-size:1.5rem; text-transform:uppercase;">2026 Schedule</h3>
             
-            <div class="editable">
-                <div class="date-card">
-                    <div>
-                        <div class="date-day">Saturday 30th May 2026</div>
-                        <div class="date-time">1:00pm - 4:00pm</div>
-                        <div class="date-mes">Paying tribute to the late and great Mr Russell Dryden</div>
-                    </div>
-                    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=The+Blue+Market+Music+and+Dance&location=The+Blue+Market+Bermondsey+London" target="_blank" class="btn-red" style="padding: 8px 20px; font-size: 0.8rem; margin:0;">Add to Cal</a>
+            <div class="date-card">
+                <div class="editable" style="flex: 1;">
+                    <div class="date-day">Saturday 30th May 2026</div>
+                    <div class="date-time">1:00pm - 4:00pm</div>
+                    <div class="date-mes">Paying tribute to the late and great Mr Russell Dryden</div>
                 </div>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=The+Blue+Market+Music+and+Dance&location=The+Blue+Market+Bermondsey+London" target="_blank" class="btn-red" style="padding: 8px 20px; font-size: 0.8rem; margin:0;">Add to Cal</a>
             </div>
 
             <h3 style="margin-top: 60px; margin-bottom: 20px; color: var(--dark); font-size:1.5rem;">Memories from The Blue Market</h3>
-            
             <div class="gallery-grid">
                 <img src="images/letsmakemusic.jpeg" class="gallery-img editable" alt="Live Music Performance">
                 <img src="images/letsmakemusidancing.jpeg" class="gallery-img editable" alt="Dancing at The Blue Market">
